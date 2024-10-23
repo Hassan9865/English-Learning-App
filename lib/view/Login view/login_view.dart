@@ -71,6 +71,8 @@ class LoginView extends StatelessWidget {
                               height: 25,
                             ),
                             Mybutton(
+                                width: MediaQuery.of(context).size.width / 10,
+                                color: Colors.black,
                                 text: "sign in",
                                 ontap: () {
                                   viewModel.naviagteToBottomNav();

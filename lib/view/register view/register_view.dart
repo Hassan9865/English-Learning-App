@@ -71,6 +71,8 @@ class RegisterView extends StatelessWidget {
                               height: 25,
                             ),
                             Mybutton(
+                                width: double.infinity,
+                                color: Colors.black,
                                 text: "SignUp",
                                 ontap: () {
                                   // viewModel.singInFunc();
