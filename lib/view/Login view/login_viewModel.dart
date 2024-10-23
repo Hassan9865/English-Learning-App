@@ -13,4 +13,12 @@ class LoginViewmodel extends BaseViewModel {
   naviagteToRegister() {
     navigationService.navigateToRegisterView();
   }
+
+  naviagteToHome() {
+    navigationService.navigateToHomeView();
+  }
+
+  naviagteToBottomNav() {
+    navigationService.navigateToBottomNavbarView();
+  }
 }

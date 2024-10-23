@@ -73,7 +73,7 @@ class LoginView extends StatelessWidget {
                             Mybutton(
                                 text: "sign in",
                                 ontap: () {
-                                  // viewModel.singInFunc();
+                                  viewModel.naviagteToBottomNav();
                                 }),
                             const SizedBox(
                               height: 25,
