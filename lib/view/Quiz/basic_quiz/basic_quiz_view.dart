@@ -1,124 +1,89 @@
+import 'package:eng_learning_app/components/optionButton.dart';
+import 'package:eng_learning_app/list/home_list.dart';
+import 'package:eng_learning_app/view/Quiz/basic_quiz/basic_quiz_viewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:eng_learning_app/view/Quiz/basic_quiz/basic_quiz_viewModel.dart';
-import 'package:eng_learning_app/list/home_list.dart'; // import your list
 
 class BasicQuizView extends StatelessWidget {
   const BasicQuizView({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
-        viewModelBuilder: () => BasicQuizViewmodel(),
-        builder: (context, BasicQuizViewmodel viewModel, child) {
-          final quiz = basicQuiz[viewModel.currentQuestionIndex];
+    return ViewModelBuilder<BasicQuizViewModel>.reactive(
+      viewModelBuilder: () => BasicQuizViewModel(),
+      builder: (context, viewModel, child) {
+        final currentQuiz =
+            basicQuiz[viewModel.currentQuestionIndex]; // Get current question
+        final correctAnswerIndex =
+            currentQuiz.correctAnswerIndex; // Get the correct answer index
 
-          return Scaffold(
-            backgroundColor: Colors.grey[200],
-            appBar: AppBar(title: Text(quiz.title)),
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Card(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)),
-                    elevation: 5,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width * 0.8,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              quiz.ques,
-                              style: TextStyle(
-                                color: Colors.lightBlue,
-                                fontSize:
-                                    MediaQuery.of(context).size.width / 16,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+        return Scaffold(
+          backgroundColor: Colors.grey[200],
+          appBar: AppBar(
+            title: const Text("Basic Quiz"),
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Question card
+                Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  elevation: 5,
+                  child: Container(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(
+                      currentQuiz.ques,
+                      style: const TextStyle(fontSize: 20),
                     ),
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height / 20),
+                ),
+                const SizedBox(height: 20),
 
-                  // Option Buttons
-                  for (int i = 0; i < 3; i++)
-                    OptionButton(
-                      index: i,
-                      text: quiz.getOption(i),
-                      selected: viewModel.selectedOptionIndex == i,
-                      correct: viewModel.isCorrect(i),
-                      answered: viewModel.answered,
-                      onTap: () => viewModel.selectOption(i),
-                    ),
+                // Option buttons
+                for (int i = 0; i < 3; i++)
+                  OptionButton(
+                    text: i == 0
+                        ? currentQuiz.option1
+                        : i == 1
+                            ? currentQuiz.option2
+                            : currentQuiz.option3,
+                    color: viewModel.selectedOptionIndex == null
+                        ? Colors.black // Default color for unselected
+                        : viewModel.selectedOptionIndex == i &&
+                                viewModel.isCorrect(i, correctAnswerIndex)
+                            ? Colors.blue // Correct answer
+                            : viewModel.selectedOptionIndex == i
+                                ? Colors.red // Wrong answer
+                                : viewModel.isCorrect(i, correctAnswerIndex)
+                                    ? Colors
+                                        .blue // Correct answer (after wrong selected)
+                                    : Colors.black, // Unselected options
+                    onTap: viewModel.answered
+                        ? null // Disable buttons after answer is given
+                        : () {
+                            viewModel.selectOption(i, correctAnswerIndex);
+                          },
+                  ),
 
-                  SizedBox(height: MediaQuery.of(context).size.height / 20),
+                const SizedBox(height: 20),
 
-                  // Next Button
-                  if (viewModel.answered)
-                    ElevatedButton(
-                      onPressed: viewModel.hasNextQuestion
-                          ? viewModel.nextQuestion
-                          : null, // Disable if no more questions
-                      child: Text("Next"),
-                    ),
-                ],
-              ),
+                // Next button to move to the next question
+                FloatingActionButton(
+                  onPressed: viewModel.answered
+                      ? () {
+                          viewModel.nextQuestion(); // Move to the next question
+                        }
+                      : null, // Disable until question is answered
+                  child: const Text("Next"),
+                ),
+              ],
             ),
-          );
-        });
-  }
-}
-
-// Option Button Widget
-class OptionButton extends StatelessWidget {
-  final int index;
-  final String text;
-  final bool selected;
-  final bool correct;
-  final bool answered;
-  final VoidCallback onTap;
-
-  OptionButton({
-    required this.index,
-    required this.text,
-    required this.selected,
-    required this.correct,
-    required this.answered,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    Color getColor() {
-      if (!answered) return Colors.black;
-      if (selected && correct) return Colors.blue;
-      if (selected && !correct) return Colors.red;
-      if (correct) return Colors.blue;
-      return Colors.black;
-    }
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          // primary: getColor(),
-          backgroundColor: getColor(),
-
-          minimumSize: Size(MediaQuery.of(context).size.width / 2, 50),
-        ),
-        onPressed: answered ? null : onTap, // Disable if already answered
-        child: Text(text),
-      ),
+          ),
+        );
+      },
     );
   }
 }
