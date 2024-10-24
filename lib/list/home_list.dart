@@ -1,39 +1,61 @@
-class ProfileList {
+class BasicQuiz {
   final String title;
-  final String subtitle;
-  final String image;
+  final String ques;
+  final String option1;
+  final String option2;
+  final String option3;
 
-  ProfileList({
+  BasicQuiz({
     required this.title,
-    required this.subtitle,
-    required this.image,
+    required this.ques,
+    required this.option1,
+    required this.option2,
+    required this.option3,
   });
+  String getOption(int index) {
+    if (index == 0) return option1;
+    if (index == 1) return option2;
+    return option3;
+  }
 }
 
-final List<ProfileList> profilelist = [
-  ProfileList(
-      title: "Dr Hassan ",
-      subtitle: "Heart Specialist",
-      image: 'assets/images/pic1.jpg'),
-  ProfileList(
-      title: "Dr Haseeb ",
-      subtitle: "Orthopedic",
-      image: 'assets/images/pic2.png'),
-  ProfileList(
-      title: "Dr Hashir ",
-      subtitle: "Bone Specialist",
-      image: 'assets/images/pic3.jpg'),
-  ProfileList(
-    title: "Dr Saad ",
-    subtitle: "Eye Specialist",
-    image: 'assets/images/pic4.jpg',
-  ),
-  ProfileList(
-      title: "Dr Bilal ",
-      subtitle: "Heart Specialist",
-      image: 'assets/images/pic2.png'),
-  ProfileList(
-      title: "Dr Bilal ",
-      subtitle: "Heart Specialist",
-      image: 'assets/images/pic2.png'),
+final List<BasicQuiz> basicQuiz = [
+  BasicQuiz(
+      title: "Basic Quiz",
+      ques: "I saw ___ cat in the garden yesterday.",
+      option1: 'a) An',
+      option2: 'b) The',
+      option3: 'c) None'),
+  BasicQuiz(
+      title: "Basic Quiz",
+      ques:
+          "Which article is used before singular countable nouns that begin with a vowel sound?",
+      option1: 'a) A',
+      option2: 'b) The',
+      option3: 'c) None'),
+  BasicQuiz(
+      title: "Basic Quiz",
+      ques: "Choose the correct article: I have ___ apple in my bag.",
+      option1: 'a) A',
+      option2: 'b) The',
+      option3: 'c) None'),
+  BasicQuiz(
+      title: "Basic Quiz",
+      ques:
+          "Fill in the blank: He is ___ doctor at ___ hospital down the street.",
+      option1: 'a) A',
+      option2: 'b) the / a ',
+      option3: 'c) a / the'),
+  BasicQuiz(
+      title: "Basic Quiz",
+      ques: "___ sun rises in the east.",
+      option1: 'a) A',
+      option2: 'b) The',
+      option3: 'c) None'),
+  BasicQuiz(
+      title: "Basic Quiz",
+      ques: "She gave me ___ book, but I lost ___ book.",
+      option1: ' a) a / the',
+      option2: 'b) the / a',
+      option3: 'c) a / a'),
 ];
