@@ -40,35 +40,38 @@ class BasicQuizView extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: MediaQuery.of(context).size.height / 20),
 
                 // Option buttons
                 for (int i = 0; i < 3; i++)
-                  OptionButton(
-                    text: i == 0
-                        ? currentQuiz.option1
-                        : i == 1
-                            ? currentQuiz.option2
-                            : currentQuiz.option3,
-                    color: viewModel.selectedOptionIndex == null
-                        ? Colors.black // Default color for unselected
-                        : viewModel.selectedOptionIndex == i &&
-                                viewModel.isCorrect(i, correctAnswerIndex)
-                            ? Colors.blue // Correct answer
-                            : viewModel.selectedOptionIndex == i
-                                ? Colors.red // Wrong answer
-                                : viewModel.isCorrect(i, correctAnswerIndex)
-                                    ? Colors
-                                        .blue // Correct answer (after wrong selected)
-                                    : Colors.black, // Unselected options
-                    onTap: viewModel.answered
-                        ? null // Disable buttons after answer is given
-                        : () {
-                            viewModel.selectOption(i, correctAnswerIndex);
-                          },
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: OptionButton(
+                      text: i == 0
+                          ? currentQuiz.option1
+                          : i == 1
+                              ? currentQuiz.option2
+                              : currentQuiz.option3,
+                      color: viewModel.selectedOptionIndex == null
+                          ? Colors.black // Default color for unselected
+                          : viewModel.selectedOptionIndex == i &&
+                                  viewModel.isCorrect(i, correctAnswerIndex)
+                              ? Colors.blue // Correct answer
+                              : viewModel.selectedOptionIndex == i
+                                  ? Colors.red // Wrong answer
+                                  : viewModel.isCorrect(i, correctAnswerIndex)
+                                      ? Colors
+                                          .blue // Correct answer (after wrong selected)
+                                      : Colors.black, // Unselected options
+                      onTap: viewModel.answered
+                          ? null // Disable buttons after answer is given
+                          : () {
+                              viewModel.selectOption(i, correctAnswerIndex);
+                            },
+                    ),
                   ),
 
-                const SizedBox(height: 20),
+                SizedBox(height: MediaQuery.of(context).size.height / 20),
 
                 // Next button to move to the next question
                 FloatingActionButton(
