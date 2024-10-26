@@ -46,8 +46,8 @@ class BottomNavbarView extends StatelessWidget {
 
   List<Widget> _buildScreens() => [
         HomeView(),
-        ChatsView(),
         ProfileView(),
+        ChatsView(),
         TeachersView(),
       ];
 

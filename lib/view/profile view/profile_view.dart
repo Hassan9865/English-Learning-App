@@ -10,7 +10,38 @@ class ProfileView extends StatelessWidget {
     return ViewModelBuilder.reactive(
         viewModelBuilder: () => ProfileViewmodel(),
         builder: (context, ProfileViewmodel viewModel, child) {
-          return Scaffold();
+          return Scaffold(
+            backgroundColor: Colors.grey[200],
+            appBar: AppBar(title: Text("Profile"), centerTitle: true, actions: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.logout_outlined),
+              ),
+            ]),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 50,
+                  ),
+                  Text("ame"),
+                  Container(
+                    height: 100,
+                    width: 80,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                        topLeft: Radius.circular(20),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          );
         });
   }
 }
