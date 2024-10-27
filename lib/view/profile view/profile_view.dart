@@ -11,35 +11,75 @@ class ProfileView extends StatelessWidget {
         viewModelBuilder: () => ProfileViewmodel(),
         builder: (context, ProfileViewmodel viewModel, child) {
           return Scaffold(
-            backgroundColor: Colors.grey[200],
-            appBar: AppBar(title: Text("Profile"), centerTitle: true, actions: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.logout_outlined),
-              ),
-            ]),
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 50,
-                  ),
-                  Text("ame"),
-                  Container(
-                    height: 100,
-                    width: 80,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(20),
-                        topLeft: Radius.circular(20),
+            backgroundColor: Colors.grey[100],
+            appBar: AppBar(
+                title: Text(
+                  "Profile",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                centerTitle: true,
+                actions: []),
+            body: Stack(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: MediaQuery.of(context).size.height / 15,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height / 28,
+                    ),
+                    Text("ame"),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height / 20,
+                    ),
+                    Center(
+                      child: Container(
+                        height: MediaQuery.of(context).size.height * 0.4,
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Column(
+                          children: [
+                            ListTile(
+                              leading: Icon(
+                                Icons.email_outlined,
+                                color: Colors.lightBlue,
+                              ),
+                              title: Text("Email"),
+                            ),
+                            ListTile(
+                              leading: Icon(
+                                Icons.language_outlined,
+                                color: Colors.lightBlue[200],
+                              ),
+                              title: Text("Laguage"),
+                            ),
+                            ListTile(
+                              leading: Icon(
+                                Icons.logout_outlined,
+                                color: Colors.lightBlue[200],
+                              ),
+                              title: Text("Logout"),
+                            ),
+                            ListTile(
+                              leading: Icon(
+                                Icons.email,
+                                color: Colors.lightBlue[100],
+                              ),
+                              title: Text("Email"),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  )
-                ],
-              ),
+                  ],
+                ),
+              ],
             ),
           );
         });
