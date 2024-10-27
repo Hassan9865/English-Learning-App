@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
       viewModelBuilder: () => HomeViewmodel(),
       builder: (context, HomeViewmodel viewModel, index) {
         return Scaffold(
-          backgroundColor: Colors.grey[300],
+          backgroundColor: Colors.grey[100],
           appBar: AppBar(
             centerTitle: true,
             title: Text(
@@ -36,7 +36,7 @@ class HomeView extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 20,
+                height: MediaQuery.of(context).size.height / 30,
               ),
               GestureDetector(
                 onTap: () {
@@ -48,14 +48,14 @@ class HomeView extends StatelessWidget {
                     imageUrl: "assets/bookImages/book 1.jpg"),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 20,
+                height: MediaQuery.of(context).size.height / 30,
               ),
               CustomCard(
                   title: "Modal Verbs",
                   description: "Understand how modal verbs work.",
                   imageUrl: "assets/bookImages/book 2.jpg"),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 20,
+                height: MediaQuery.of(context).size.height / 30,
               ),
               CustomCard(
                   title: "Tense",

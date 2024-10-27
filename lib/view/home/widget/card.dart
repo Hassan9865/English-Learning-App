@@ -40,12 +40,14 @@ class CustomCard extends StatelessWidget {
                     fontSize: MediaQuery.of(context).size.width / 16,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
+              SizedBox(
+                height: MediaQuery.of(context).size.width / 50,
+              ),
               Text(
                 description,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: MediaQuery.of(context).size.width / 16,
+                  fontSize: MediaQuery.of(context).size.width / 20,
                 ),
               ),
             ],

@@ -17,10 +17,9 @@ class SplashView extends StatelessWidget {
               Duration(seconds: 6),
               () => Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => LoginView())));
-          return Center(
-            child: Icon(
-              Icons.safety_check_outlined,
-              size: 50,
+          return Scaffold(
+            body: Center(
+              child: Image.asset("assets/eng.jpg"),
             ),
           );
         });

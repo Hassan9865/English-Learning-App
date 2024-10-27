@@ -30,10 +30,13 @@ class RegisterView extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(
-                              Icons.domain_outlined,
-                              color: Colors.blueAccent,
-                              size: 100,
+                            CircleAvatar(
+                              radius: MediaQuery.of(context).size.height / 10,
+                              backgroundImage: AssetImage(
+                                "assets/eng.jpg",
+                              ),
+
+                              // height: 200,
                             ),
                             const SizedBox(
                               height: 25,

@@ -30,10 +30,13 @@ class LoginView extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(
-                              Icons.domain_outlined,
-                              color: Colors.blueAccent,
-                              size: 100,
+                            CircleAvatar(
+                              radius: MediaQuery.of(context).size.height / 10,
+                              backgroundImage: AssetImage(
+                                "assets/eng.jpg",
+                              ),
+
+                              // height: 200,
                             ),
                             const SizedBox(
                               height: 25,
@@ -71,7 +74,6 @@ class LoginView extends StatelessWidget {
                               height: 25,
                             ),
                             Mybutton(
-                                width: MediaQuery.of(context).size.width / 10,
                                 color: Colors.black,
                                 text: "sign in",
                                 ontap: () {

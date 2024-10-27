@@ -5,14 +5,14 @@ class Mybutton extends StatelessWidget {
   final void Function()? ontap;
   final String text;
   final Color color;
-  final double width;
+  final double? width;
 
   const Mybutton({
     super.key,
     this.ontap,
     required this.text,
     required this.color,
-    required this.width,
+    this.width,
   });
 
   @override
