@@ -10,7 +10,30 @@ class TeachersView extends StatelessWidget {
     return ViewModelBuilder.reactive(
         viewModelBuilder: () => TeachersViewmodel(),
         builder: (context, TeachersViewmodel viewModel, child) {
-          return Scaffold();
+          return Scaffold(
+            backgroundColor: Colors.grey[100],
+            appBar: AppBar(
+              automaticallyImplyLeading: false,
+              title: Text(
+                "Teachers",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+              ),
+              backgroundColor: Colors.blueGrey[300],
+              elevation: 0,
+            ),
+            body: ListView.builder(
+                // itemCount: notificationList.length,
+                itemBuilder: (context, index) {
+              return ListTile(
+                leading: CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage("notificationList[index].image"),
+                ),
+                title: Text("notification"),
+                trailing: Text("12:00  am"),
+              );
+            }),
+          );
         });
   }
 }

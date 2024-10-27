@@ -3,6 +3,7 @@ import 'package:eng_learning_app/view/Quiz/basic_quiz/basic_quiz_view.dart';
 import 'package:eng_learning_app/view/Splash%20view/splash_view.dart';
 import 'package:eng_learning_app/view/bottom_NavBar/bottom_NavBar_view.dart';
 import 'package:eng_learning_app/view/chats/chats_view.dart';
+import 'package:eng_learning_app/view/chatting%20view/chatting_view.dart';
 import 'package:eng_learning_app/view/home/home_view.dart';
 import 'package:eng_learning_app/view/profile%20view/profile_view.dart';
 import 'package:eng_learning_app/view/register%20view/register_view.dart';
@@ -23,6 +24,7 @@ import 'package:stacked_services/stacked_services.dart';
   MaterialRoute(page: TeachersView),
   MaterialRoute(page: BottomNavbarView),
   MaterialRoute(page: BasicQuizView),
+  MaterialRoute(page: ChattingView),
 ], dependencies: [
   Singleton(classType: NavigationService)
 ])
