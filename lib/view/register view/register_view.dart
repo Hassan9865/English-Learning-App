@@ -49,6 +49,18 @@ class RegisterView extends StatelessWidget {
                               height: 30,
                             ),
                             MyTextFeid(
+                                controller: viewModel.nameController,
+                                hintText: "Name"),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            MyTextFeid(
+                                controller: viewModel.nameController,
+                                hintText: "Mother Tounge"),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            MyTextFeid(
                               controller: viewModel.emailController,
                               hintText: "Email",
                               // obscureText: false,
@@ -107,4 +119,34 @@ class RegisterView extends StatelessWidget {
           );
         });
   }
+}
+
+Widget FormTextField(String? labelText) {
+  return TextFormField(
+    decoration: InputDecoration(
+      labelText: labelText,
+      labelStyle: TextStyle(color: Colors.grey[600]),
+      filled: true,
+      fillColor: Colors.grey[200], // Light background color
+      suffixIcon: Icon(
+        Icons.safety_check,
+        size: 24,
+        color: Colors.grey[600],
+      ),
+      contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: Colors.transparent),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: Colors.blueAccent),
+      ),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: Colors.transparent),
+      ),
+    ),
+    style: TextStyle(fontSize: 16, color: Colors.black),
+  );
 }

@@ -8,6 +8,7 @@ class RegisterViewmodel extends BaseViewModel {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController paswordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
 
   bool isloading = false;
 
