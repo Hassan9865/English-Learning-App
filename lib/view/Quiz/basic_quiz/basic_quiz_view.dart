@@ -77,7 +77,8 @@ class BasicQuizView extends StatelessWidget {
                 FloatingActionButton(
                   onPressed: viewModel.answered
                       ? () {
-                          viewModel.nextQuestion(); // Move to the next question
+                          viewModel.nextQuestion(
+                              context); // Move to the next question
                         }
                       : null, // Disable until question is answered
                   child: const Text("Next"),

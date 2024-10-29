@@ -24,7 +24,7 @@ class BasicQuiz {
 final List<BasicQuiz> basicQuiz = [
   BasicQuiz(
     title: "Basic Quiz",
-    ques: "I saw ___ cat in the garden yesterday.",
+    ques: "1) I saw ___ cat in the garden yesterday.",
     option1: 'a) An',
     option2: 'b) The',
     option3: 'c) None',

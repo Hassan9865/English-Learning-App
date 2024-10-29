@@ -1,4 +1,6 @@
+import 'package:eng_learning_app/components/dialogBox.dart';
 import 'package:eng_learning_app/list/home_list.dart';
+import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 class BasicQuizViewModel extends BaseViewModel {
@@ -26,12 +28,16 @@ class BasicQuizViewModel extends BaseViewModel {
   }
 
   // Method to move to the next question
-  void nextQuestion() {
+  void nextQuestion(BuildContext context) {
     if (currentQuestionIndex < basicQuiz.length - 1) {
       currentQuestionIndex++; // Increment the question index
     } else {
       // Handle the case when the quiz is completed
       // You can navigate to a results page or show a message
+
+      showAlertDialog(
+        context,
+      );
     }
     reset(); // Reset for the new question
     notifyListeners(); // Notify UI to update
