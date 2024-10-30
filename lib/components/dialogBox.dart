@@ -1,4 +1,4 @@
-import 'package:eng_learning_app/view/home/home_view.dart';
+import 'package:eng_learning_app/view/bottom_NavBar/bottom_NavBar_view.dart';
 import 'package:flutter/material.dart';
 
 void showAlertDialog(BuildContext context) {
@@ -53,8 +53,8 @@ void showAlertDialog(BuildContext context) {
               ),
             ),
             onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => HomeView()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => BottomNavbarView()));
             },
             child: Text('Play Next'),
           ),
