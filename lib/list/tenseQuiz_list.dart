@@ -1,0 +1,225 @@
+class TenseQuiz {
+  final String title;
+  final String ques;
+  final String option1;
+  final String option2;
+  final String option3;
+  final int correctAnswerIndex;
+
+  TenseQuiz({
+    required this.title,
+    required this.ques,
+    required this.option1,
+    required this.option2,
+    required this.option3,
+    required this.correctAnswerIndex,
+  });
+  String getOption(int index) {
+    if (index == 0) return option1;
+    if (index == 1) return option2;
+    return option3;
+  }
+}
+
+final List<TenseQuiz> tenseQuiz = [
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "1) I ___ (go) to the store yesterday.",
+    option1: 'a) go',
+    option2: 'b) went',
+    option3: 'c) goes',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "2) She ___ (watch) TV every evening.",
+    option1: 'a) watched',
+    option2: 'b) watches',
+    option3: 'c) watching',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "3) They ___ (play) soccer tomorrow.",
+    option1: 'a) will play',
+    option2: 'b) play',
+    option3: 'c) playing',
+    correctAnswerIndex: 0,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "4) We ___ (study) for the exam now.",
+    option1: 'a) studies',
+    option2: 'b) studying',
+    option3: 'c) are studying',
+    correctAnswerIndex: 2,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "5) I ___ (not/see) him since last week.",
+    option1: 'a) did not see',
+    option2: 'b) have not seen',
+    option3: 'c) will not see',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "6) She ___ (work) here for five years.",
+    option1: 'a) is working',
+    option2: 'b) worked',
+    option3: 'c) has been working',
+    correctAnswerIndex: 2,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "7) They ___ (leave) before I arrived.",
+    option1: 'a) left',
+    option2: 'b) have left',
+    option3: 'c) had left',
+    correctAnswerIndex: 2,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "8) I ___ (call) you later.",
+    option1: 'a) will call',
+    option2: 'b) calling',
+    option3: 'c) called',
+    correctAnswerIndex: 0,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "9) By this time next year, I ___ (finish) my studies.",
+    option1: 'a) finish',
+    option2: 'b) will have finished',
+    option3: 'c) finished',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "10) They ___ (be) to Italy several times.",
+    option1: 'a) have been',
+    option2: 'b) were',
+    option3: 'c) are being',
+    correctAnswerIndex: 0,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "11) He ___ (clean) the room when I arrived.",
+    option1: 'a) cleans',
+    option2: 'b) was cleaning',
+    option3: 'c) has cleaned',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "12) She usually ___ (go) to work at 9 am.",
+    option1: 'a) goes',
+    option2: 'b) went',
+    option3: 'c) going',
+    correctAnswerIndex: 0,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "13) We ___ (finish) dinner before they arrived.",
+    option1: 'a) finished',
+    option2: 'b) have finished',
+    option3: 'c) had finished',
+    correctAnswerIndex: 2,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "14) He ___ (be) here since morning.",
+    option1: 'a) has been',
+    option2: 'b) was',
+    option3: 'c) will be',
+    correctAnswerIndex: 0,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "15) I ___ (sleep) when the phone rang.",
+    option1: 'a) sleeping',
+    option2: 'b) was sleeping',
+    option3: 'c) slept',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "16) She ___ (write) the report tomorrow.",
+    option1: 'a) writes',
+    option2: 'b) will write',
+    option3: 'c) wrote',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "17) They ___ (already/eat) dinner.",
+    option1: 'a) already ate',
+    option2: 'b) have already eaten',
+    option3: 'c) are eating',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "18) I ___ (live) here for ten years.",
+    option1: 'a) lived',
+    option2: 'b) am living',
+    option3: 'c) have lived',
+    correctAnswerIndex: 2,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "19) She ___ (study) English when I met her.",
+    option1: 'a) studies',
+    option2: 'b) was studying',
+    option3: 'c) studied',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "20) By the time you arrive, I ___ (complete) the task.",
+    option1: 'a) will complete',
+    option2: 'b) will have completed',
+    option3: 'c) completed',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "21) He ___ (work) at this company since 2015.",
+    option1: 'a) worked',
+    option2: 'b) has worked',
+    option3: 'c) is working',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "22) We ___ (move) to a new house next month.",
+    option1: 'a) moving',
+    option2: 'b) have moved',
+    option3: 'c) are moving',
+    correctAnswerIndex: 2,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "23) They ___ (travel) to Paris last summer.",
+    option1: 'a) traveled',
+    option2: 'b) have traveled',
+    option3: 'c) travel',
+    correctAnswerIndex: 0,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "24) I ___ (never/see) such a beautiful place.",
+    option1: 'a) never saw',
+    option2: 'b) have never seen',
+    option3: 'c) am never seeing',
+    correctAnswerIndex: 1,
+  ),
+  TenseQuiz(
+    title: "Tense Quiz",
+    ques: "25) She ___ (plan) to study abroad next year.",
+    option1: 'a) is planning',
+    option2: 'b) plans',
+    option3: 'c) planned',
+    correctAnswerIndex: 0,
+  ),
+];
