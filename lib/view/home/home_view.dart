@@ -17,51 +17,64 @@ class HomeView extends StatelessWidget {
             centerTitle: true,
             title: Text(
               "Domino",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: MediaQuery.of(context).size.width / 16,
+                color: Colors.white,
+              ),
             ),
-            backgroundColor: Colors.grey[500],
+            backgroundColor: Colors.deepPurple,
+            elevation: 4,
+            // leading: Icon(Icons.menu, color: Colors.white),
           ),
-          body: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  'Improve your English by takig Quizes',
-                  style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.width / 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+          body: SingleChildScrollView(
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Improve your English by taking Quizzes',
+                    style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.width / 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.deepPurple[700],
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 30,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      viewModel.navigateTobasicQuiz();
+                    },
+                    child: CustomCard(
+                      title: "Basic",
+                      description: "Quiz basic English concepts",
+                      imageUrl: "assets/bookImages/book 1.jpg",
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 30,
+                  ),
+                  CustomCard(
+                    title: "Modal Verbs",
+                    description: "Understand how modal verbs work.",
+                    imageUrl: "assets/bookImages/book 2.jpg",
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 30,
+                  ),
+                  CustomCard(
+                    title: "Tense",
+                    description: "Master past, present, and future tenses.",
+                    imageUrl: "assets/bookImages/book 3.jpg",
+                  ),
+                ],
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 30,
-              ),
-              GestureDetector(
-                onTap: () {
-                  viewModel.navigateTobasicQuiz();
-                },
-                child: CustomCard(
-                    title: "Basic",
-                    description: "Quiz basic English concepts",
-                    imageUrl: "assets/bookImages/book 1.jpg"),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 30,
-              ),
-              CustomCard(
-                  title: "Modal Verbs",
-                  description: "Quiz Understand how modal verbs work.",
-                  imageUrl: "assets/bookImages/book 2.jpg"),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 30,
-              ),
-              CustomCard(
-                  title: "Tense",
-                  description: "Quiz Master past, present, and future tenses.",
-                  imageUrl: "assets/bookImages/book 3.jpg")
-            ],
+            ),
           ),
         );
       },

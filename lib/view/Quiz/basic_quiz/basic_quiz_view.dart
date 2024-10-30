@@ -18,9 +18,20 @@ class BasicQuizView extends StatelessWidget {
             currentQuiz.correctAnswerIndex; // Get the correct answer index
 
         return Scaffold(
-          backgroundColor: Colors.grey[200],
+          backgroundColor: Colors.grey[300],
           appBar: AppBar(
-            title: const Text("Basic Quiz"),
+            centerTitle: true,
+            title: Text(
+              "Basic Quiz",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: MediaQuery.of(context).size.width / 16,
+                color: Colors.white,
+              ),
+            ),
+            backgroundColor: Colors.deepPurple,
+            elevation: 4,
+            // leading: Icon(Icons.menu, color: Colors.white),
           ),
           body: Center(
             child: Column(
