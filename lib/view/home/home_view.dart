@@ -59,10 +59,15 @@ class HomeView extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 30,
                   ),
-                  CustomCard(
-                    title: "Modal Verbs",
-                    description: "Understand how modal verbs work.",
-                    imageUrl: "assets/bookImages/book 2.jpg",
+                  InkWell(
+                    onTap: () {
+                      viewModel.navigateToModalQuiz();
+                    },
+                    child: CustomCard(
+                      title: "Modal Verbs",
+                      description: "Understand how modal verbs work.",
+                      imageUrl: "assets/bookImages/book 2.jpg",
+                    ),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 30,
