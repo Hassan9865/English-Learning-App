@@ -26,7 +26,7 @@ class HomeView extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  'Learn English - Choose a Section',
+                  'Improve your English by takig Quizes',
                   style: TextStyle(
                     fontSize: MediaQuery.of(context).size.width / 16,
                     fontWeight: FontWeight.bold,
@@ -44,7 +44,7 @@ class HomeView extends StatelessWidget {
                 },
                 child: CustomCard(
                     title: "Basic",
-                    description: "Learn basic English concepts",
+                    description: "Quiz basic English concepts",
                     imageUrl: "assets/bookImages/book 1.jpg"),
               ),
               SizedBox(
@@ -52,14 +52,14 @@ class HomeView extends StatelessWidget {
               ),
               CustomCard(
                   title: "Modal Verbs",
-                  description: "Understand how modal verbs work.",
+                  description: "Quiz Understand how modal verbs work.",
                   imageUrl: "assets/bookImages/book 2.jpg"),
               SizedBox(
                 height: MediaQuery.of(context).size.height / 30,
               ),
               CustomCard(
                   title: "Tense",
-                  description: "Master past, present, and future tenses.",
+                  description: "Quiz Master past, present, and future tenses.",
                   imageUrl: "assets/bookImages/book 3.jpg")
             ],
           ),
