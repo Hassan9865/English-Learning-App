@@ -1,5 +1,5 @@
 import 'package:eng_learning_app/components/dialogBox.dart';
-import 'package:eng_learning_app/list/home_list.dart';
+import 'package:eng_learning_app/list/basicQuiz_list.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
