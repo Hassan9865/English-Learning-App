@@ -72,10 +72,15 @@ class HomeView extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 30,
                   ),
-                  CustomCard(
-                    title: "Tense",
-                    description: "Master past, present, and future tenses.",
-                    imageUrl: "assets/bookImages/book 3.jpg",
+                  InkWell(
+                    onTap: () {
+                      viewModel.navigateToTenseQuiz();
+                    },
+                    child: CustomCard(
+                      title: "Tense",
+                      description: "Master past, present, and future tenses.",
+                      imageUrl: "assets/bookImages/book 3.jpg",
+                    ),
                   ),
                 ],
               ),

@@ -17,14 +17,16 @@ import 'package:eng_learning_app/view/Quiz/basic_quiz/basic_quiz_view.dart'
     as _i10;
 import 'package:eng_learning_app/view/Quiz/modal_quiz/modalQuiz_view.dart'
     as _i12;
+import 'package:eng_learning_app/view/Quiz/tense_quiz/tenseQuiz_view.dart'
+    as _i13;
 import 'package:eng_learning_app/view/register%20view/register_view.dart'
     as _i4;
 import 'package:eng_learning_app/view/Splash%20view/splash_view.dart' as _i2;
 import 'package:eng_learning_app/view/teachers_view/teachers_view.dart' as _i8;
-import 'package:flutter/material.dart' as _i13;
+import 'package:flutter/material.dart' as _i14;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i14;
+import 'package:stacked_services/stacked_services.dart' as _i15;
 
 class Routes {
   static const splashView = '/';
@@ -49,6 +51,8 @@ class Routes {
 
   static const modalquizView = '/modalquiz-view';
 
+  static const tensequizView = '/tensequiz-view';
+
   static const all = <String>{
     splashView,
     loginView,
@@ -61,6 +65,7 @@ class Routes {
     basicQuizView,
     chattingView,
     modalquizView,
+    tensequizView,
   };
 }
 
@@ -110,72 +115,82 @@ class StackedRouter extends _i1.RouterBase {
       Routes.modalquizView,
       page: _i12.ModalquizView,
     ),
+    _i1.RouteDef(
+      Routes.tensequizView,
+      page: _i13.TensequizView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.SplashView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.SplashView(),
         settings: data,
       );
     },
     _i3.LoginView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.LoginView(),
         settings: data,
       );
     },
     _i4.RegisterView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.RegisterView(),
         settings: data,
       );
     },
     _i5.HomeView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.HomeView(),
         settings: data,
       );
     },
     _i6.ProfileView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.ProfileView(),
         settings: data,
       );
     },
     _i7.ChatsView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.ChatsView(),
         settings: data,
       );
     },
     _i8.TeachersView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.TeachersView(),
         settings: data,
       );
     },
     _i9.BottomNavbarView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => _i9.BottomNavbarView(),
         settings: data,
       );
     },
     _i10.BasicQuizView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.BasicQuizView(),
         settings: data,
       );
     },
     _i11.ChattingView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.ChattingView(),
         settings: data,
       );
     },
     _i12.ModalquizView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.ModalquizView(),
+        settings: data,
+      );
+    },
+    _i13.TensequizView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i13.TensequizView(),
         settings: data,
       );
     },
@@ -188,7 +203,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i14.NavigationService {
+extension NavigatorStateExtension on _i15.NavigationService {
   Future<dynamic> navigateToSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -343,6 +358,20 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToTensequizView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.tensequizView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -491,6 +520,20 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.modalquizView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithTensequizView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.tensequizView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
