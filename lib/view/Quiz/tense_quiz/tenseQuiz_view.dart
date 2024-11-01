@@ -28,7 +28,6 @@ class TensequizView extends StatelessWidget {
               ),
               backgroundColor: Colors.deepPurple,
               elevation: 4,
-              // leading: Icon(Icons.menu, color: Colors.white),
             ),
             body: Center(
               child: Column(
@@ -80,7 +79,6 @@ class TensequizView extends StatelessWidget {
 
                   SizedBox(height: MediaQuery.of(context).size.height / 20),
 
-                  // Next button to move to the next question
                   FloatingActionButton(
                     onPressed: viewModel.answered
                         ? () {

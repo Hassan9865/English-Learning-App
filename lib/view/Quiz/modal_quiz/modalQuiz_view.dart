@@ -28,7 +28,6 @@ class ModalquizView extends StatelessWidget {
               ),
               backgroundColor: Colors.deepPurple,
               elevation: 4,
-              // leading: Icon(Icons.menu, color: Colors.white),
             ),
             body: Center(
               child: Column(
