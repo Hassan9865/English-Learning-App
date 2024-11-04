@@ -25,13 +25,21 @@ class TeachersView extends StatelessWidget {
                 // itemCount: notificationList.length,
                 itemBuilder: (context, index) {
               return ListTile(
-                leading: CircleAvatar(
-                  radius: 25,
-                  backgroundImage: AssetImage("notificationList[index].image"),
-                ),
-                title: Text("notification"),
-                trailing: Text("12:00  am"),
-              );
+                  leading: CircleAvatar(
+                    radius: 25,
+                    // backgroundImage: AssetImage("notificationList[index].image"),
+                  ),
+                  title: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("notification"),
+                      Row(
+                        children: [Text("reviews"), Icon(Icons.star)],
+                      )
+                    ],
+                  ),
+                  trailing: IconButton(
+                      onPressed: () {}, icon: Icon(Icons.message_outlined)));
             }),
           );
         });
