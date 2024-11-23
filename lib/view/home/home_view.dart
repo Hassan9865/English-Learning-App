@@ -16,7 +16,7 @@ class HomeView extends StatelessWidget {
           appBar: AppBar(
             centerTitle: true,
             title: Text(
-              "Domino",
+              "Quiz",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: MediaQuery.of(context).size.width / 16,
