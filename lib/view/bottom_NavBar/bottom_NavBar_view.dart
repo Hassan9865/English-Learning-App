@@ -30,7 +30,7 @@ class BottomNavbarView extends StatelessWidget {
             stateManagement: true,
             hideNavigationBarWhenKeyboardAppears: true,
             onItemSelected: model.setIndex,
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.deepPurple,
             hideOnScrollSettings:
                 HideOnScrollSettings(hideNavBarOnScroll: false),
             // hideNavigationBar: model.isNavBarHidden,
@@ -56,26 +56,26 @@ class BottomNavbarView extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: Icon(Icons.home_outlined),
         title: "Home",
-        activeColorPrimary: Colors.blue,
-        inactiveColorPrimary: Colors.grey,
+        activeColorPrimary: Colors.white,
+        inactiveColorPrimary: Colors.cyanAccent,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.person_outline),
         title: "Profile",
-        activeColorPrimary: Colors.teal,
-        inactiveColorPrimary: Colors.grey,
+        activeColorPrimary: Colors.white,
+        inactiveColorPrimary: Colors.cyanAccent,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.chat),
         title: "Chat",
-        activeColorPrimary: Colors.blueAccent,
-        inactiveColorPrimary: Colors.grey,
+        activeColorPrimary: Colors.white,
+        inactiveColorPrimary: Colors.cyanAccent,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.safety_check),
         title: "Teacher",
-        activeColorPrimary: Colors.deepOrange,
-        inactiveColorPrimary: Colors.grey,
+        activeColorPrimary: Colors.white,
+        inactiveColorPrimary: Colors.cyanAccent,
       ),
       // PersistentBottomNavBarItem(
       //   icon: Icon(Icons.settings),
