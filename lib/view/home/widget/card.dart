@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class CustomCard extends StatelessWidget {
   final String title;
   final String description;
-  final String imageUrl;
+  final String? imageUrl;
   const CustomCard(
       {super.key,
       required this.title,
       required this.description,
-      required this.imageUrl});
+      this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +19,14 @@ class CustomCard extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.8,
         // height: MediaQuery.of(context).size.height / 8,
         decoration: BoxDecoration(
+          border: Border.all(color: Colors.deepPurple, width: 2.0),
           borderRadius: BorderRadius.circular(15),
-          image: DecorationImage(
-            image: AssetImage(imageUrl),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(
-                Colors.black.withOpacity(0.3), BlendMode.darken),
-          ),
+          // image: DecorationImage(
+          //   // image: AssetImage(imageUrl) ,
+          //   fit: BoxFit.cover,
+          //   colorFilter: ColorFilter.mode(
+          //       Colors.black.withOpacity(0.3), BlendMode.darken),
+          // ),
         ),
         child: Padding(
           padding: EdgeInsets.all(16.0),
@@ -36,7 +37,7 @@ class CustomCard extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                    color: Colors.amber,
+                    color: Colors.deepPurple,
                     fontSize: MediaQuery.of(context).size.width / 16,
                     fontWeight: FontWeight.bold),
               ),
@@ -46,7 +47,7 @@ class CustomCard extends StatelessWidget {
               Text(
                 description,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: MediaQuery.of(context).size.width / 20,
                 ),
               ),
