@@ -40,6 +40,12 @@ class ModalquizView extends StatelessWidget {
                     ),
                     elevation: 5,
                     child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.deepPurple,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.circular(10)),
                       padding: const EdgeInsets.all(16),
                       child: Text(
                         currentQuiz.ques,
