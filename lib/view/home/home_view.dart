@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
       viewModelBuilder: () => HomeViewmodel(),
       builder: (context, HomeViewmodel viewModel, index) {
         return Scaffold(
-          backgroundColor: Colors.grey[100],
+          backgroundColor: Colors.grey[200],
           appBar: AppBar(
             centerTitle: true,
             title: Text(
@@ -53,7 +53,7 @@ class HomeView extends StatelessWidget {
                     child: CustomCard(
                       title: "Basic",
                       description: "Quiz basic English concepts",
-                      imageUrl: "assets/bookImages/book 1.jpg",
+                      // imageUrl: "assets/bookImages/book 1.jpg",
                     ),
                   ),
                   SizedBox(
@@ -66,7 +66,7 @@ class HomeView extends StatelessWidget {
                     child: CustomCard(
                       title: "Modal Verbs",
                       description: "Understand how modal verbs work.",
-                      imageUrl: "assets/bookImages/book 2.jpg",
+                      // imageUrl: "assets/bookImages/book 2.jpg",
                     ),
                   ),
                   SizedBox(
@@ -79,7 +79,7 @@ class HomeView extends StatelessWidget {
                     child: CustomCard(
                       title: "Tense",
                       description: "Master past, present, and future tenses.",
-                      imageUrl: "assets/bookImages/book 3.jpg",
+                      // imageUrl: "assets/bookImages/book 3.jpg",
                     ),
                   ),
                 ],
