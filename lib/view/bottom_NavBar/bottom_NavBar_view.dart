@@ -1,3 +1,4 @@
+import 'package:eng_learning_app/view/Quiz/quizes_view/quizes_view.dart';
 import 'package:eng_learning_app/view/bottom_NavBar/bottom_NavBar_viewModel.dart';
 import 'package:eng_learning_app/view/chats/chats_view.dart';
 import 'package:eng_learning_app/view/home/home_view.dart';
@@ -49,6 +50,7 @@ class BottomNavbarView extends StatelessWidget {
         ProfileView(),
         ChatsView(),
         TeachersView(),
+        QuizesView(),
       ];
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
@@ -77,12 +79,12 @@ class BottomNavbarView extends StatelessWidget {
         activeColorPrimary: Colors.white,
         inactiveColorPrimary: Colors.cyanAccent,
       ),
-      // PersistentBottomNavBarItem(
-      //   icon: Icon(Icons.settings),
-      //   title: "Settings",
-      //   activeColorPrimary: Colors.indigo,
-      //   inactiveColorPrimary: Colors.grey,
-      // ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.quiz_outlined),
+        title: "quizes",
+        activeColorPrimary: Colors.white,
+        inactiveColorPrimary: Colors.cyanAccent,
+      ),
     ];
   }
 }

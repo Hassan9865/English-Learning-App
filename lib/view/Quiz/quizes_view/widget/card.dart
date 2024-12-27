@@ -19,7 +19,10 @@ class CustomCard extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.8,
         // height: MediaQuery.of(context).size.height / 8,
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.deepPurple, width: 2.0,),
+          border: Border.all(
+            color: Colors.deepPurple,
+            width: 2.0,
+          ),
           borderRadius: BorderRadius.circular(15),
           // image: DecorationImage(
           //   // image: AssetImage(imageUrl) ,
