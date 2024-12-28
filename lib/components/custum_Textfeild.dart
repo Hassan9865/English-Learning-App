@@ -36,7 +36,10 @@ class CustomTextField extends StatelessWidget {
               items: dropdownItems?.map((String item) {
                 return DropdownMenuItem<String>(
                   value: item,
-                  child: Text(item),
+                  child: Text(
+                    item,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 );
               }).toList(),
               onChanged: (value) {
