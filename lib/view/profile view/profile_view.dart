@@ -22,77 +22,91 @@ class ProfileView extends StatelessWidget {
                 actions: []),
             body: Stack(
               children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      radius: MediaQuery.of(context).size.height / 15,
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height / 28,
-                    ),
-                    Text(viewModel.name),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height / 20,
-                    ),
-                    Center(
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.6,
-                        width: MediaQuery.of(context).size.width * 0.8,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Column(
-                          children: [
-                            ListTile(
-                              leading: Icon(
-                                Icons.email_outlined,
-                                color: Colors.lightBlue,
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: MediaQuery.of(context).size.height / 15,
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height / 30,
+                      ),
+                      Text(
+                        viewModel.name,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: MediaQuery.of(context).size.width / 15),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height / 30,
+                      ),
+                      Center(
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.8,
+                          padding: EdgeInsets.symmetric(
+                              vertical: 20), // Added padding
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: Column(
+                            mainAxisSize:
+                                MainAxisSize.min, // Makes height dynamic
+                            children: [
+                              ListTile(
+                                leading: Icon(
+                                  Icons.email_outlined,
+                                  color: Colors.lightBlue,
+                                ),
+                                title: Text("Email"),
+                                subtitle: Text(viewModel.email),
                               ),
-                              title: Text(viewModel.email),
-                            ),
-                            ListTile(
-                              leading: Icon(
-                                Icons.language_outlined,
-                                color: Colors.lightBlue[200],
+                              ListTile(
+                                leading: Icon(
+                                  Icons.energy_savings_leaf_outlined,
+                                  color: Colors.lightBlue[200],
+                                ),
+                                title: Text('English Proficiency Level'),
+                                subtitle: Text(viewModel.proficiency),
                               ),
-                              title: Text(viewModel.country),
-                            ),
-                            ListTile(
-                              leading: Icon(
-                                Icons.logout_outlined,
-                                color: Colors.lightBlue[200],
+                              ListTile(
+                                leading: Icon(
+                                  Icons.location_city_outlined,
+                                  color: Colors.lightBlue[200],
+                                ),
+                                title: Text('Country'),
+                                subtitle: Text(viewModel.country),
                               ),
-                              title: Text(viewModel.gender),
-                            ),
-                            ListTile(
-                              leading: Icon(
-                                Icons.email,
-                                color: Colors.lightBlue[100],
+                              ListTile(
+                                leading: Icon(
+                                  Icons.person_outline,
+                                  color: Colors.lightBlue[200],
+                                ),
+                                title: Text('Gender'),
+                                subtitle: Text(viewModel.gender),
                               ),
-                              title: Text(viewModel.interest),
-                            ),
-                            ListTile(
-                              leading: Icon(
-                                Icons.email,
-                                color: Colors.lightBlue[100],
+                              ListTile(
+                                leading: Icon(
+                                  Icons.label,
+                                  color: Colors.lightBlue[200],
+                                ),
+                                title: Text('Learning Goals'),
+                                subtitle: Text(viewModel.learnGoal),
                               ),
-                              title: Text(viewModel.learnGoal),
-                            ),
-                            ListTile(
-                              leading: Icon(
-                                Icons.email,
-                                color: Colors.lightBlue[100],
+                              ListTile(
+                                leading: Icon(
+                                  Icons.interests_outlined,
+                                  color: Colors.lightBlue[200],
+                                ),
+                                title: Text('Interests'),
+                                subtitle: Text(viewModel.interest),
                               ),
-                              title: Text(viewModel.proficiency),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
