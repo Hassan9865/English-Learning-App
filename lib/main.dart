@@ -2,8 +2,11 @@ import 'package:eng_learning_app/app/app.locator.dart';
 import 'package:eng_learning_app/app/app.router.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPreferences.getInstance();
   await setupLocator();
   runApp(const MyApp());
 }

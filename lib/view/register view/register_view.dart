@@ -115,12 +115,45 @@ class RegisterView extends StatelessWidget {
                           height: 25,
                         ),
                         Mybutton(
-                            width: MediaQuery.of(context).size.width / 2,
-                            color: Colors.black,
-                            text: "SignUp",
-                            ontap: () {
+                          width: MediaQuery.of(context).size.width / 2,
+                          color: Colors.black,
+                          text: "Register",
+                          ontap: () {
+                            // Check if all fields are not empty
+                            if (viewModel.nameController.text.isNotEmpty &&
+                                viewModel.emailController.text.isNotEmpty &&
+                                viewModel.learngoalController.text.isNotEmpty &&
+                                viewModel.interestController.text.isNotEmpty &&
+                                viewModel.coutryController.text.isNotEmpty &&
+                                viewModel.englevelController.text.isNotEmpty &&
+                                viewModel.genderCotroller.text.isNotEmpty) {
+                              viewModel.saveUserDate();
+                              // Navigate to the bottom navigation bar if all fields are valid
                               viewModel.naviagteToBottomNav();
-                            }),
+                            } else {
+                              // Show popup alert if any field is empty
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text('Missing Information'),
+                                    content: Text(
+                                        'Please fill all fields before proceeding.'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context)
+                                              .pop(); // Close popup
+                                        },
+                                        child: Text('OK'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            }
+                          },
+                        )
                       ],
                     ),
                   ),

@@ -9,6 +9,7 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
         viewModelBuilder: () => ProfileViewmodel(),
+        onViewModelReady: (viewModel) => viewModel.loadData(),
         builder: (context, ProfileViewmodel viewModel, child) {
           return Scaffold(
             backgroundColor: Colors.grey[100],
@@ -31,13 +32,13 @@ class ProfileView extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height / 28,
                     ),
-                    Text("ame"),
+                    Text(viewModel.name),
                     SizedBox(
                       height: MediaQuery.of(context).size.height / 20,
                     ),
                     Center(
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.4,
+                        height: MediaQuery.of(context).size.height * 0.6,
                         width: MediaQuery.of(context).size.width * 0.8,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -50,28 +51,42 @@ class ProfileView extends StatelessWidget {
                                 Icons.email_outlined,
                                 color: Colors.lightBlue,
                               ),
-                              title: Text("Email"),
+                              title: Text(viewModel.email),
                             ),
                             ListTile(
                               leading: Icon(
                                 Icons.language_outlined,
                                 color: Colors.lightBlue[200],
                               ),
-                              title: Text("Laguage"),
+                              title: Text(viewModel.country),
                             ),
                             ListTile(
                               leading: Icon(
                                 Icons.logout_outlined,
                                 color: Colors.lightBlue[200],
                               ),
-                              title: Text("Logout"),
+                              title: Text(viewModel.gender),
                             ),
                             ListTile(
                               leading: Icon(
                                 Icons.email,
                                 color: Colors.lightBlue[100],
                               ),
-                              title: Text("Email"),
+                              title: Text(viewModel.interest),
+                            ),
+                            ListTile(
+                              leading: Icon(
+                                Icons.email,
+                                color: Colors.lightBlue[100],
+                              ),
+                              title: Text(viewModel.learnGoal),
+                            ),
+                            ListTile(
+                              leading: Icon(
+                                Icons.email,
+                                color: Colors.lightBlue[100],
+                              ),
+                              title: Text(viewModel.proficiency),
                             ),
                           ],
                         ),

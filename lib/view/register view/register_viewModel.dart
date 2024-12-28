@@ -30,7 +30,7 @@ class RegisterViewmodel extends BaseViewModel {
     await pref.setString("name", nameController.text);
     await pref.setString("email", emailController.text);
     await pref.setString("proficiency", englevelController.text);
-    await pref.setString("coutry", coutryController.text);
+    await pref.setString("country", coutryController.text);
     await pref.setString("gender", genderCotroller.text);
     await pref.setString("learnGoal", learngoalController.text);
     await pref.setString("interest", interestController.text);
