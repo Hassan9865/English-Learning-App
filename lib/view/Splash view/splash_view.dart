@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:eng_learning_app/view/Login%20view/login_view.dart';
 import 'package:eng_learning_app/view/Splash%20view/splash_viewModel.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:stacked/stacked.dart';
 
 class SplashView extends StatelessWidget {
@@ -18,8 +19,27 @@ class SplashView extends StatelessWidget {
               () => Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => LoginView())));
           return Scaffold(
-            body: Center(
-              child: Image.asset("assets/eng.jpg"),
+            backgroundColor: Colors.grey[300],
+            body: SafeArea(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Lottie.asset(
+                    "assets/animation/Animation - 1735376222709.json",
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.width / 4,
+                  ),
+                  Text(
+                    "Improve Your English",
+                    style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.width / 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         });
