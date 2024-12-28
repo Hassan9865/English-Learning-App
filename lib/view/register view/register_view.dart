@@ -25,7 +25,7 @@ class RegisterView extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: MediaQuery.of(context).size.height / 10,
-                          backgroundImage: AssetImage(
+                          backgroundImage: const AssetImage(
                             "assets/eng.jpg",
                           ),
 
@@ -54,7 +54,7 @@ class RegisterView extends StatelessWidget {
                           icon: Icons.energy_savings_leaf_outlined,
                           controller: viewModel.englevelController,
                           isDropdown: true,
-                          dropdownItems: [
+                          dropdownItems: const [
                             "Beginner",
                             "Intermediate",
                             "Advanced"
@@ -67,7 +67,7 @@ class RegisterView extends StatelessWidget {
                                   label: "Country",
                                   controller: viewModel.coutryController),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Flexible(
@@ -87,14 +87,14 @@ class RegisterView extends StatelessWidget {
                                 label: "Learning Goals",
                                 controller: viewModel.learngoalController,
                                 isDropdown: true,
-                                dropdownItems: [
+                                dropdownItems: const [
                                   "Grammar",
                                   "Speaking",
                                   "Writing",
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Expanded(
@@ -102,7 +102,7 @@ class RegisterView extends StatelessWidget {
                                 label: "Interests",
                                 controller: viewModel.interestController,
                                 isDropdown: true,
-                                dropdownItems: [
+                                dropdownItems: const [
                                   "Vocabulary",
                                   "Sounds",
                                   "Speech"
@@ -119,7 +119,7 @@ class RegisterView extends StatelessWidget {
                             color: Colors.black,
                             text: "SignUp",
                             ontap: () {
-                              // viewModel.singInFunc();
+                              viewModel.naviagteToBottomNav();
                             }),
                       ],
                     ),
