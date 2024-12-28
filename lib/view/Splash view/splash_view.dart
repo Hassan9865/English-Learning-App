@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:eng_learning_app/view/Login%20view/login_view.dart';
 import 'package:eng_learning_app/view/Splash%20view/splash_viewModel.dart';
+import 'package:eng_learning_app/view/register%20view/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:stacked/stacked.dart';
@@ -17,7 +17,7 @@ class SplashView extends StatelessWidget {
           Timer(
               Duration(seconds: 6),
               () => Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => LoginView())));
+                  MaterialPageRoute(builder: (context) => RegisterView())));
           return Scaffold(
             backgroundColor: Colors.grey[300],
             body: SafeArea(

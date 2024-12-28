@@ -1,5 +1,5 @@
 import 'package:eng_learning_app/components/MyButton.dart';
-import 'package:eng_learning_app/components/textfeild.dart';
+import 'package:eng_learning_app/components/custum_Textfeild.dart';
 import 'package:eng_learning_app/view/register%20view/register_viewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -48,69 +48,86 @@ class RegisterView extends StatelessWidget {
                             const SizedBox(
                               height: 30,
                             ),
-                            MyTextFeid(
-                                controller: viewModel.nameController,
-                                hintText: "Name"),
-                            const SizedBox(
-                              height: 10,
+                            CustomTextField(
+                                label: "Name",
+                                icon: Icons.person_outline,
+                                controller: viewModel.nameController),
+                            CustomTextField(
+                                label: "Email",
+                                icon: Icons.email,
+                                controller: viewModel.emailController),
+                            CustomTextField(
+                              label: "English Proficiency Level",
+                              icon: Icons.energy_savings_leaf_outlined,
+                              controller: viewModel.englevelController,
+                              isDropdown: true,
+                              dropdownItems: [
+                                "Beginner",
+                                "Intermediate",
+                                "Advanced"
+                              ],
                             ),
-                            MyTextFeid(
-                                controller: viewModel.nameController,
-                                hintText: "Mother Tounge"),
-                            const SizedBox(
-                              height: 10,
+                            Row(
+                              children: [
+                                Flexible(
+                                  child: CustomTextField(
+                                      label: "Country",
+                                      controller: viewModel.coutryController),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Flexible(
+                                  child: CustomTextField(
+                                    label: "Gender",
+                                    controller: viewModel.genderCotroller,
+                                    isDropdown: true,
+                                    dropdownItems: ["Male", "Female"],
+                                  ),
+                                ),
+                              ],
                             ),
-                            MyTextFeid(
-                              controller: viewModel.emailController,
-                              hintText: "Email",
-                              // obscureText: false,
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            MyTextFeid(
-                              controller: viewModel.paswordController,
-                              hintText: "password",
-                              // obscureText: !viewModel.isPasswordVisible,
-                              //   suffixIcon: IconButton(
-                              //       onPressed: () {
-                              //         viewModel.togglePasswordVisibility();
-                              //         // viewModel.rebuildUi();
-                              //         print(viewModel.isPasswordVisible);
-                              //       },
-                              //       icon: Icon(viewModel.isPasswordVisible
-                              //           ? Icons.visibility
-                              //           : Icons.visibility_off)),
+                            Row(
+                              children: [
+                                Flexible(
+                                  child: CustomTextField(
+                                    label: "Interests",
+                                    controller: viewModel.interestController,
+                                    isDropdown: true,
+                                    dropdownItems: [
+                                      "Vocabulary",
+                                      "sdh",
+                                      "Grammar"
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Flexible(
+                                  child: CustomTextField(
+                                    label: "Learning Goals",
+                                    controller: viewModel.learngoalController,
+                                    isDropdown: true,
+                                    dropdownItems: [
+                                      "Grammar",
+                                      "Speaking",
+                                      "Writing",
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
                             const SizedBox(
                               height: 25,
                             ),
                             Mybutton(
-                                width: double.infinity,
+                                width: MediaQuery.of(context).size.width / 2,
                                 color: Colors.black,
                                 text: "SignUp",
                                 ontap: () {
                                   // viewModel.singInFunc();
                                 }),
-                            const SizedBox(
-                              height: 25,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Text("Already as a member ?  "),
-                                InkWell(
-                                  onTap: () {
-                                    viewModel.navigateToLoginView();
-                                  },
-                                  child: const Text(
-                                    "SignIn",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                )
-                              ],
-                            )
                           ],
                         ),
                       ),
@@ -119,34 +136,4 @@ class RegisterView extends StatelessWidget {
           );
         });
   }
-}
-
-Widget FormTextField(String? labelText) {
-  return TextFormField(
-    decoration: InputDecoration(
-      labelText: labelText,
-      labelStyle: TextStyle(color: Colors.grey[600]),
-      filled: true,
-      fillColor: Colors.grey[200], // Light background color
-      suffixIcon: Icon(
-        Icons.safety_check,
-        size: 24,
-        color: Colors.grey[600],
-      ),
-      contentPadding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: Colors.transparent),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: Colors.blueAccent),
-      ),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: Colors.transparent),
-      ),
-    ),
-    style: TextStyle(fontSize: 16, color: Colors.black),
-  );
 }
