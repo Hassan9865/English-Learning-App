@@ -17,7 +17,7 @@ class MyCard extends StatelessWidget {
     return GestureDetector(
       onTap: ontap,
       child: Card(
-        color: Colors.grey[100],
+        color: Colors.grey[200],
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         child: Column(

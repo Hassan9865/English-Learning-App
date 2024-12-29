@@ -1,5 +1,5 @@
 import 'package:eng_learning_app/components/chatBubble.dart';
-import 'package:eng_learning_app/view/chatting%20view/chatting_viewModel.dart';
+import 'package:eng_learning_app/view/non_use%20file/chatting%20view/chatting_viewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 

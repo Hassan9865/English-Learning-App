@@ -74,6 +74,9 @@ class HomeView extends StatelessWidget {
                         title: "Reading & Listening Exercises",
                         icon: Icons.headphones,
                         color: Colors.blueAccent,
+                        ontap: () {
+                          viewModel.naviagteTorReadListeview();
+                        },
                       ),
                       MyCard(
                           title: "Quizes",

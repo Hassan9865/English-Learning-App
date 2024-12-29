@@ -1,9 +1,9 @@
 import 'package:eng_learning_app/view/Quiz/quizes_view/quizes_view.dart';
-import 'package:eng_learning_app/view/bottom_NavBar/bottom_NavBar_viewModel.dart';
-import 'package:eng_learning_app/view/chats/chats_view.dart';
+import 'package:eng_learning_app/view/non_use%20file/bottom_NavBar/bottom_NavBar_viewModel.dart';
+import 'package:eng_learning_app/view/non_use%20file/chats/chats_view.dart';
 import 'package:eng_learning_app/view/home/home_view.dart';
 import 'package:eng_learning_app/view/profile%20view/profile_view.dart';
-import 'package:eng_learning_app/view/teachers_view/teachers_view.dart';
+import 'package:eng_learning_app/view/non_use%20file/teachers_view/teachers_view.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:stacked/stacked.dart';

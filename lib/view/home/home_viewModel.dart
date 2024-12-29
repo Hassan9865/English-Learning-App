@@ -12,4 +12,8 @@ class HomeViewmodel extends BaseViewModel {
   naviagteToQuizview() {
     navigationService.navigateToQuizesView();
   }
+
+  naviagteTorReadListeview() {
+    navigationService.navigateToReadlistenView();
+  }
 }
