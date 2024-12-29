@@ -39,7 +39,7 @@ class StoryView extends StatelessWidget {
             body: Column(children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 2.5,
+                height: MediaQuery.of(context).size.height / 4,
                 padding: EdgeInsets.all(28.0),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
@@ -60,8 +60,8 @@ class StoryView extends StatelessWidget {
               SizedBox(
                 height: 8,
               ),
-              SingleChildScrollView(
-                child: Expanded(
+              Expanded(
+                child: SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
