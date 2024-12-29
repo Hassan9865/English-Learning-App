@@ -66,9 +66,10 @@ class CardSlider extends StatelessWidget {
               child: Text(
                 title,
                 style: TextStyle(
-                    color: Colors.white,
-                    fontSize: MediaQuery.of(context).size.width / 17,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.white,
+                  fontSize: MediaQuery.of(context).size.width / 17,
+                  // fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),

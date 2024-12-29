@@ -44,15 +44,16 @@ class HomeView extends StatelessWidget {
                 Text(
                   "Quotes",
                   style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.width / 14,
-                      fontWeight: FontWeight.bold),
+                    fontSize: MediaQuery.of(context).size.width / 14,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
                 CardSlider(),
                 Text(
                   "Exercise",
                   style: TextStyle(
                       fontSize: MediaQuery.of(context).size.width / 14,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.w500),
                 ),
                 Expanded(
                   child: GridView.count(

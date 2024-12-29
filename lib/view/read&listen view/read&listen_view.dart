@@ -10,7 +10,34 @@ class ReadlistenView extends StatelessWidget {
     return ViewModelBuilder.reactive(
         viewModelBuilder: () => ReadlistenViewmodel(),
         builder: (context, ReadlistenViewmodel viewModel, child) {
-          return Scaffold();
+          return Scaffold(
+            backgroundColor: Colors.grey[150],
+            appBar: AppBar(
+              centerTitle: true,
+              title: Text(
+                "Read & listen",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: MediaQuery.of(context).size.width / 16,
+                  color: Colors.white,
+                ),
+              ),
+              backgroundColor: Colors.deepPurple,
+              elevation: 4,
+            ),
+            body: SafeArea(
+                child: Column(
+              children: [
+                Expanded(
+                  child: ListView.builder(itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text("Story"),
+                    );
+                  }),
+                )
+              ],
+            )),
+          );
         });
   }
 }
