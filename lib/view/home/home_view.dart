@@ -41,17 +41,11 @@ class HomeView extends StatelessWidget {
           body: SafeArea(
             child: Column(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Quotes",
-                      style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width / 14,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
+                Text(
+                  "Quotes",
+                  style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.width / 14,
+                      fontWeight: FontWeight.bold),
                 ),
                 CardSlider(),
                 Text(
@@ -65,7 +59,7 @@ class HomeView extends StatelessWidget {
                     crossAxisCount: 2,
                     crossAxisSpacing: 16,
                     mainAxisSpacing: 16,
-                    children: const [
+                    children: [
                       MyCard(
                         title: "Vocaulary Builder",
                         icon: Icons.menu_book_outlined,
@@ -77,15 +71,17 @@ class HomeView extends StatelessWidget {
                         color: Colors.blueAccent,
                       ),
                       MyCard(
-                        title: "Listening Exercises",
+                        title: "Reading & Listening Exercises",
                         icon: Icons.headphones,
                         color: Colors.blueAccent,
                       ),
                       MyCard(
-                        title: "Quizes",
-                        icon: Icons.quiz_outlined,
-                        color: Colors.blueAccent,
-                      )
+                          title: "Quizes",
+                          icon: Icons.quiz_outlined,
+                          color: Colors.blueAccent,
+                          ontap: () {
+                            viewModel.naviagteToQuizview();
+                          })
                     ],
                   ),
                 )

@@ -1,6 +1,7 @@
 import 'package:eng_learning_app/view/Login%20view/login_view.dart';
 import 'package:eng_learning_app/view/Quiz/basic_quiz/basic_quiz_view.dart';
 import 'package:eng_learning_app/view/Quiz/modal_quiz/modalQuiz_view.dart';
+import 'package:eng_learning_app/view/Quiz/quizes_view/quizes_view.dart';
 import 'package:eng_learning_app/view/Quiz/tense_quiz/tenseQuiz_view.dart';
 import 'package:eng_learning_app/view/Splash%20view/splash_view.dart';
 import 'package:eng_learning_app/view/bottom_NavBar/bottom_NavBar_view.dart';
@@ -29,6 +30,7 @@ import 'package:stacked_services/stacked_services.dart';
   MaterialRoute(page: ChattingView),
   MaterialRoute(page: ModalquizView),
   MaterialRoute(page: TensequizView),
+  MaterialRoute(page: QuizesView),
 ], dependencies: [
   Singleton(classType: NavigationService)
 ])

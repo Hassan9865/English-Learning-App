@@ -14,12 +14,18 @@ class ProfileView extends StatelessWidget {
           return Scaffold(
             backgroundColor: Colors.grey[100],
             appBar: AppBar(
-                title: Text(
-                  "Profile",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+              centerTitle: true,
+              title: Text(
+                "Profile",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: MediaQuery.of(context).size.width / 16,
+                  color: Colors.white,
                 ),
-                centerTitle: true,
-                actions: []),
+              ),
+              backgroundColor: Colors.deepPurple,
+              elevation: 4,
+            ),
             body: Stack(
               children: [
                 SingleChildScrollView(

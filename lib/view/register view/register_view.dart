@@ -129,7 +129,7 @@ class RegisterView extends StatelessWidget {
                                 viewModel.genderCotroller.text.isNotEmpty) {
                               viewModel.saveUserDate();
                               // Navigate to the bottom navigation bar if all fields are valid
-                              viewModel.naviagteToBottomNav();
+                              viewModel.navigateToHome();
                             } else {
                               // Show popup alert if any field is empty
                               showDialog(

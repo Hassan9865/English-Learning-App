@@ -8,4 +8,8 @@ class HomeViewmodel extends BaseViewModel {
   naviagteToProfileview() {
     navigationService.navigateToProfileView();
   }
+
+  naviagteToQuizview() {
+    navigationService.navigateToQuizesView();
+  }
 }
