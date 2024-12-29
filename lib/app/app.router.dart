@@ -5,6 +5,7 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:eng_learning_app/list/story_list.dart' as _i18;
 import 'package:eng_learning_app/view/home/home_view.dart' as _i5;
 import 'package:eng_learning_app/view/non_use%20file/bottom_NavBar/bottom_NavBar_view.dart'
     as _i9;
@@ -25,15 +26,16 @@ import 'package:eng_learning_app/view/Quiz/quizes_view/quizes_view.dart'
     as _i14;
 import 'package:eng_learning_app/view/Quiz/tense_quiz/tenseQuiz_view.dart'
     as _i13;
-import 'package:eng_learning_app/view/read&listen%20view/read&listen_view.dart'
+import 'package:eng_learning_app/view/read&liste/read&listen%20view/read&listen_view.dart'
     as _i15;
+import 'package:eng_learning_app/view/read&liste/story/story_view.dart' as _i16;
 import 'package:eng_learning_app/view/register%20view/register_view.dart'
     as _i4;
 import 'package:eng_learning_app/view/Splash%20view/splash_view.dart' as _i2;
-import 'package:flutter/material.dart' as _i16;
+import 'package:flutter/material.dart' as _i17;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i17;
+import 'package:stacked_services/stacked_services.dart' as _i19;
 
 class Routes {
   static const splashView = '/';
@@ -64,6 +66,8 @@ class Routes {
 
   static const readlistenView = '/readlisten-view';
 
+  static const storyView = '/story-view';
+
   static const all = <String>{
     splashView,
     loginView,
@@ -79,6 +83,7 @@ class Routes {
     tensequizView,
     quizesView,
     readlistenView,
+    storyView,
   };
 }
 
@@ -140,90 +145,101 @@ class StackedRouter extends _i1.RouterBase {
       Routes.readlistenView,
       page: _i15.ReadlistenView,
     ),
+    _i1.RouteDef(
+      Routes.storyView,
+      page: _i16.StoryView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.SplashView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.SplashView(),
         settings: data,
       );
     },
     _i3.LoginView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.LoginView(),
         settings: data,
       );
     },
     _i4.RegisterView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.RegisterView(),
         settings: data,
       );
     },
     _i5.HomeView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.HomeView(),
         settings: data,
       );
     },
     _i6.ProfileView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.ProfileView(),
         settings: data,
       );
     },
     _i7.ChatsView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.ChatsView(),
         settings: data,
       );
     },
     _i8.TeachersView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.TeachersView(),
         settings: data,
       );
     },
     _i9.BottomNavbarView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => _i9.BottomNavbarView(),
         settings: data,
       );
     },
     _i10.BasicQuizView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.BasicQuizView(),
         settings: data,
       );
     },
     _i11.ChattingView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.ChattingView(),
         settings: data,
       );
     },
     _i12.ModalquizView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.ModalquizView(),
         settings: data,
       );
     },
     _i13.TensequizView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.TensequizView(),
         settings: data,
       );
     },
     _i14.QuizesView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.QuizesView(),
         settings: data,
       );
     },
     _i15.ReadlistenView: (data) {
-      return _i16.MaterialPageRoute<dynamic>(
+      return _i17.MaterialPageRoute<dynamic>(
         builder: (context) => const _i15.ReadlistenView(),
+        settings: data,
+      );
+    },
+    _i16.StoryView: (data) {
+      final args = data.getArgs<StoryViewArguments>(nullOk: false);
+      return _i17.MaterialPageRoute<dynamic>(
+        builder: (context) => _i16.StoryView(key: args.key, story: args.story),
         settings: data,
       );
     },
@@ -236,7 +252,34 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i17.NavigationService {
+class StoryViewArguments {
+  const StoryViewArguments({
+    this.key,
+    required this.story,
+  });
+
+  final _i17.Key? key;
+
+  final _i18.StoryList story;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "story": "$story"}';
+  }
+
+  @override
+  bool operator ==(covariant StoryViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key && other.story == story;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^ story.hashCode;
+  }
+}
+
+extension NavigatorStateExtension on _i19.NavigationService {
   Future<dynamic> navigateToSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -433,6 +476,23 @@ extension NavigatorStateExtension on _i17.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToStoryView({
+    _i17.Key? key,
+    required _i18.StoryList story,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(Routes.storyView,
+        arguments: StoryViewArguments(key: key, story: story),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -623,6 +683,23 @@ extension NavigatorStateExtension on _i17.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.readlistenView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithStoryView({
+    _i17.Key? key,
+    required _i18.StoryList story,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.storyView,
+        arguments: StoryViewArguments(key: key, story: story),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
