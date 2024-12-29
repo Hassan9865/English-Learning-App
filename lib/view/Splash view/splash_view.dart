@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:eng_learning_app/view/Splash%20view/splash_viewModel.dart';
-import 'package:eng_learning_app/view/bottom_NavBar/bottom_NavBar_view.dart';
+import 'package:eng_learning_app/view/home/home_view.dart';
 import 'package:eng_learning_app/view/register%20view/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -22,8 +22,8 @@ class SplashView extends StatelessWidget {
             bool isRegistered = pref.getBool('isRegistered') ?? false;
 
             if (isRegistered) {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => BottomNavbarView()));
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => HomeView()));
             } else {
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => RegisterView()));
