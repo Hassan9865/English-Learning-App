@@ -1,4 +1,5 @@
 import 'package:eng_learning_app/view/home/home_viewModel.dart';
+import 'package:eng_learning_app/view/home/widget/card_slider.dart';
 import 'package:eng_learning_app/view/home/widget/my_card.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -30,13 +31,23 @@ class HomeView extends StatelessWidget {
                 onPressed: () {
                   viewModel.naviagteToProfileview();
                 },
-                icon: Icon(Icons.person_outline_rounded, color: Colors.white),
+                icon: Icon(
+                  Icons.person_outline_rounded,
+                  color: Colors.white,
+                ),
               )
             ],
           ),
           body: SafeArea(
             child: Column(
               children: [
+                CardSlider(),
+                Text(
+                  "Exercise",
+                  style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.width / 14,
+                      fontWeight: FontWeight.bold),
+                ),
                 Expanded(
                   child: GridView.count(
                     crossAxisCount: 2,
@@ -44,7 +55,7 @@ class HomeView extends StatelessWidget {
                     mainAxisSpacing: 16,
                     children: const [
                       MyCard(
-                        title: "Vocaulary uilder",
+                        title: "Vocaulary Builder",
                         icon: Icons.menu_book_outlined,
                         color: Colors.blueAccent,
                       ),
