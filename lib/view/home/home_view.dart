@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
       viewModelBuilder: () => HomeViewmodel(),
       builder: (context, HomeViewmodel viewModel, index) {
         return Scaffold(
-          backgroundColor: Colors.grey[200],
+          backgroundColor: Colors.grey[150],
           appBar: AppBar(
             centerTitle: true,
             title: Text(
@@ -41,6 +41,18 @@ class HomeView extends StatelessWidget {
           body: SafeArea(
             child: Column(
               children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Quotes",
+                      style: TextStyle(
+                          fontSize: MediaQuery.of(context).size.width / 14,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
                 CardSlider(),
                 Text(
                   "Exercise",
