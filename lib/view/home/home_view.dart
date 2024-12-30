@@ -58,8 +58,8 @@ class HomeView extends StatelessWidget {
                 Expanded(
                   child: GridView.count(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
+                    crossAxisSpacing: 4,
+                    mainAxisSpacing: 4,
                     children: [
                       MyCard(
                         title: "Vocaulary Builder",
