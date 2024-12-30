@@ -47,7 +47,8 @@ class ReadlistenView extends StatelessWidget {
                             ),
                             leading: CircleAvatar(
                               radius: 30,
-                              // backgroundImage: AssetImage(profilelist[index].image), // Uncomment if using images
+                              backgroundImage: AssetImage(
+                                  "assets/circleavatar.jpg"), // Uncomment if using images
                             ),
                             title: Text(
                               storylist[index]

@@ -44,7 +44,7 @@ class StoryView extends StatelessWidget {
             ),
             body: Column(children: [
               Container(
-                width: MediaQuery.of(context).size.width,
+                // width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 4,
                 padding: EdgeInsets.all(28.0),
                 decoration: BoxDecoration(
@@ -52,7 +52,9 @@ class StoryView extends StatelessWidget {
                     Colors.blue,
                     Colors.lightBlueAccent,
                   ]),
-                  image: DecorationImage(image: AssetImage("assets/eng.jpg")),
+                  image: DecorationImage(
+                      image: AssetImage("assets/story image.jpg"),
+                      fit: BoxFit.cover),
                 ),
               ),
               Text(

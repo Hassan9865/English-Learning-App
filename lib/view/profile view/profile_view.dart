@@ -12,7 +12,7 @@ class ProfileView extends StatelessWidget {
         onViewModelReady: (viewModel) => viewModel.loadData(),
         builder: (context, ProfileViewmodel viewModel, child) {
           return Scaffold(
-            backgroundColor: Colors.grey[100],
+            backgroundColor: Colors.grey[200],
             appBar: AppBar(
               centerTitle: true,
               title: Text(
@@ -31,11 +31,15 @@ class ProfileView extends StatelessWidget {
                 SingleChildScrollView(
                   child: Column(
                     children: [
-                      CircleAvatar(
-                        radius: MediaQuery.of(context).size.height / 15,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30),
+                        child: CircleAvatar(
+                          radius: MediaQuery.of(context).size.height / 13,
+                          backgroundImage: AssetImage("assets/eng.jpg"),
+                        ),
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height / 30,
+                        height: MediaQuery.of(context).size.height / 35,
                       ),
                       Text(
                         viewModel.name,
@@ -44,11 +48,11 @@ class ProfileView extends StatelessWidget {
                             fontSize: MediaQuery.of(context).size.width / 15),
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height / 30,
+                        height: MediaQuery.of(context).size.height / 35,
                       ),
                       Center(
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.8,
+                          width: MediaQuery.of(context).size.width * 0.9,
                           padding: EdgeInsets.symmetric(
                               vertical: 20), // Added padding
                           decoration: BoxDecoration(
@@ -111,6 +115,9 @@ class ProfileView extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: 10,
+                      )
                     ],
                   ),
                 ),
