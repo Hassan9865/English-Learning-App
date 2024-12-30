@@ -29,9 +29,15 @@ class StoryView extends StatelessWidget {
               elevation: 4,
               actions: [
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      viewModel.isSpeaking
+                          ? viewModel.stop()
+                          : viewModel.speak(story.story);
+                    },
                     icon: Icon(
-                      Icons.volume_up_outlined,
+                      viewModel.isSpeaking
+                          ? Icons.volume_off_outlined
+                          : Icons.volume_up_outlined,
                       color: Colors.white,
                     ))
               ],
