@@ -1,0 +1,109 @@
+import 'package:flutter/material.dart';
+import 'package:learn_eng/components/MyButton.dart';
+import 'package:learn_eng/components/textfeild.dart';
+import 'package:learn_eng/view/non_use%20file/Login%20view/login_viewModel.dart';
+import 'package:stacked/stacked.dart';
+
+class LoginView extends StatelessWidget {
+  const LoginView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ViewModelBuilder.reactive(
+        viewModelBuilder: () => LoginViewmodel(),
+        builder: (context, viewModel, child) {
+          return Scaffold(
+            resizeToAvoidBottomInset: false,
+            backgroundColor: Colors.grey[300],
+            body: viewModel.isloading
+                ? Center(
+                    child: Container(
+                      height: MediaQuery.of(context).size.height / 20,
+                      width: MediaQuery.of(context).size.height / 20,
+                      child: CircularProgressIndicator(),
+                    ),
+                  )
+                : SafeArea(
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              radius: MediaQuery.of(context).size.height / 10,
+                              backgroundImage: AssetImage(
+                                "assets/eng.jpg",
+                              ),
+
+                              // height: 200,
+                            ),
+                            const SizedBox(
+                              height: 25,
+                            ),
+                            const Text(
+                              "welcome to Domino app",
+                              style: TextStyle(fontSize: 22),
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            MyTextFeid(
+                              controller: viewModel.emailController,
+                              hintText: "Email",
+                              // obscureText: false,
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            MyTextFeid(
+                              controller: viewModel.paswordController,
+                              hintText: "password",
+                              // obscureText: !viewModel.isPasswordVisible,
+                              //   suffixIcon: IconButton(
+                              //       onPressed: () {
+                              //         viewModel.togglePasswordVisibility();
+                              //         // viewModel.rebuildUi();
+                              //         print(viewModel.isPasswordVisible);
+                              //       },
+                              //       icon: Icon(viewModel.isPasswordVisible
+                              //           ? Icons.visibility
+                              //           : Icons.visibility_off)),
+                            ),
+                            const SizedBox(
+                              height: 25,
+                            ),
+                            Mybutton(
+                                color: Colors.black,
+                                text: "sign in",
+                                ontap: () {
+                                  viewModel.naviagteToBottomNav();
+                                }),
+                            const SizedBox(
+                              height: 25,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text("not a member ?  "),
+                                InkWell(
+                                  onTap: () {
+                                    viewModel.naviagteToRegister();
+                                  },
+                                  child: const Text(
+                                    "register",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+          );
+        });
+  }
+}
