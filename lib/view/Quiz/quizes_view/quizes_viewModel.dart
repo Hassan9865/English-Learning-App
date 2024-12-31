@@ -9,6 +9,10 @@ class QuizesViewmodel extends BaseViewModel {
     navigationService.navigateToBasicQuizView();
   }
 
+  navigateTohomeview() {
+    navigationService.navigateToHomeView();
+  }
+
   navigateToModalQuiz() {
     navigationService.navigateToModalquizView();
   }

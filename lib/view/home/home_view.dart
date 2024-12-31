@@ -24,6 +24,7 @@ class HomeView extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            automaticallyImplyLeading: false,
             backgroundColor: Colors.deepPurple,
             elevation: 4,
             actions: [

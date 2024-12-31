@@ -23,6 +23,11 @@ class QuizesView extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
+              leading: IconButton(
+                  onPressed: () {
+                    viewModel.navigateTohomeview();
+                  },
+                  icon: Icon(Icons.arrow_back_outlined)),
               backgroundColor: Colors.deepPurple,
               elevation: 4,
               // leading: Icon(Icons.menu, color: Colors.white),

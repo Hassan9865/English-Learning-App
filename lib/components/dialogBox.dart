@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_eng/view/Quiz/quizes_view/quizes_view.dart';
 import 'package:learn_eng/view/non_use%20file/bottom_NavBar/bottom_NavBar_view.dart';
 
 void showAlertDialog(BuildContext context) {
@@ -54,7 +55,7 @@ void showAlertDialog(BuildContext context) {
             ),
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => BottomNavbarView()));
+                  MaterialPageRoute(builder: (context) => QuizesView()));
             },
             child: Text('Play Next'),
           ),
