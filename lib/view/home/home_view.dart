@@ -67,7 +67,7 @@ class HomeView extends StatelessWidget {
                         icon: Icons.menu_book_outlined,
                         color: Colors.blueAccent,
                         ontap: () {
-                          viewModel.naviagteTorVocabularyview();
+                          viewModel.naviagteTorVocabTypeview();
                         },
                       ),
                       MyCard(

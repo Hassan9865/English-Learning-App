@@ -17,8 +17,8 @@ class HomeViewmodel extends BaseViewModel {
     navigationService.navigateToReadlistenView();
   }
 
-  naviagteTorVocabularyview() {
-    navigationService.navigateToVocabularyView();
+  naviagteTorVocabTypeview() {
+    navigationService.navigateToVocabtypeView();
   }
 
   naviagteTorGrammareview() {
