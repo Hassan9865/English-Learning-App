@@ -52,7 +52,8 @@ class BasicQuizView extends StatelessWidget {
                     padding: const EdgeInsets.all(16),
                     child: Text(
                       currentQuiz.ques,
-                      style: const TextStyle(fontSize: 20),
+                      style: TextStyle(
+                          fontSize: MediaQuery.of(context).size.height / 37),
                     ),
                   ),
                 ),

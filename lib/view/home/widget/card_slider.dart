@@ -22,7 +22,7 @@ class CardSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider(
       options: CarouselOptions(
-        height: MediaQuery.of(context).size.height / 3, // Adjust height
+        height: MediaQuery.of(context).size.height / 3.5, // Adjust height
         enlargeCenterPage: true,
         autoPlay: true,
         autoPlayInterval: Duration(seconds: 3),

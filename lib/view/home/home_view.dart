@@ -65,11 +65,17 @@ class HomeView extends StatelessWidget {
                         title: "Vocaulary Builder",
                         icon: Icons.menu_book_outlined,
                         color: Colors.blueAccent,
+                        ontap: () {
+                          viewModel.naviagteTorVocabularyview();
+                        },
                       ),
                       MyCard(
                         title: "Grammar Lessons",
                         icon: Icons.library_books,
                         color: Colors.blueAccent,
+                        ontap: () {
+                          viewModel.naviagteTorGrammareview();
+                        },
                       ),
                       MyCard(
                         title: "Reading & Listening Exercises",

@@ -8,7 +8,7 @@ class StoryViewmodel extends BaseViewModel {
   void initializedTts() async {
     try {
       await flutterTts.setLanguage("en-US");
-      await flutterTts.setPitch(0.8);
+      await flutterTts.setPitch(1.5);
       flutterTts.setStartHandler(() {
         isSpeaking = true;
         notifyListeners();
