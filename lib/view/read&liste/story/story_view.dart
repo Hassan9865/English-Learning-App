@@ -18,7 +18,7 @@ class StoryView extends StatelessWidget {
             appBar: AppBar(
               centerTitle: true,
               title: Text(
-                "Story ame",
+                "Story",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: MediaQuery.of(context).size.width / 16,

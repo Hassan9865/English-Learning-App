@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_eng/list/story_list.dart';
+import 'package:learn_eng/list/vocabulary_list.dart';
 import 'package:learn_eng/view/vocabulary/vocabulary%20type/vocabType_viewModel.dart';
 import 'package:stacked/stacked.dart';
 
@@ -31,14 +31,14 @@ class VocabtypeView extends StatelessWidget {
               children: [
                 Expanded(
                   child: ListView.builder(
-                    itemCount: storylist
-                        .length, // Replace with actual count or snapshot.data!.docs.length if using Firestore
+                    itemCount: vocabularylist.length,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: InkWell(
                           onTap: () {
-                            viewModel.naviagteTorVocabularyview();
+                            viewModel.naviagteTorVocabularyview(
+                                vocabularylist[index]);
                           },
                           child: ListTile(
                             shape: RoundedRectangleBorder(
@@ -47,11 +47,11 @@ class VocabtypeView extends StatelessWidget {
                             ),
                             leading: CircleAvatar(
                               radius: 30,
-                              // backgroundImage: AssetImage(
-                              //     "assets/circleavatar.jpg"), // Uncomment if using images
+                              backgroundImage: AssetImage(vocabularylist[index]
+                                  .image), // Uncomment if using images
                             ),
                             title: Text(
-                              storylist[index]
+                              vocabularylist[index]
                                   .title, // Replace with userData['name'] if using Firestore data
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,

@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart' as _i20;
 import 'package:flutter/material.dart';
 import 'package:learn_eng/list/story_list.dart' as _i21;
+import 'package:learn_eng/list/vocabulary_list.dart' as _i22;
 import 'package:learn_eng/view/grammar/grammar_view.dart' as _i18;
 import 'package:learn_eng/view/home/home_view.dart' as _i5;
 import 'package:learn_eng/view/non_use%20file/bottom_NavBar/bottom_NavBar_view.dart'
@@ -33,7 +34,7 @@ import 'package:learn_eng/view/vocabulary/vocabulary%20type/vocabType_view.dart'
     as _i19;
 import 'package:learn_eng/view/vocabulary/vocabulary_view.dart' as _i17;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i22;
+import 'package:stacked_services/stacked_services.dart' as _i23;
 
 class Routes {
   static const splashView = '/';
@@ -263,8 +264,10 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i17.VocabularyView: (data) {
+      final args = data.getArgs<VocabularyViewArguments>(nullOk: false);
       return _i20.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i17.VocabularyView(),
+        builder: (context) =>
+            _i17.VocabularyView(key: args.key, vocab: args.vocab),
         settings: data,
       );
     },
@@ -316,7 +319,34 @@ class StoryViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i22.NavigationService {
+class VocabularyViewArguments {
+  const VocabularyViewArguments({
+    this.key,
+    required this.vocab,
+  });
+
+  final _i20.Key? key;
+
+  final _i22.VocabularyList vocab;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "vocab": "$vocab"}';
+  }
+
+  @override
+  bool operator ==(covariant VocabularyViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key && other.vocab == vocab;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^ vocab.hashCode;
+  }
+}
+
+extension NavigatorStateExtension on _i23.NavigationService {
   Future<dynamic> navigateToSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -530,14 +560,17 @@ extension NavigatorStateExtension on _i22.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToVocabularyView([
+  Future<dynamic> navigateToVocabularyView({
+    _i20.Key? key,
+    required _i22.VocabularyList vocab,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.vocabularyView,
+        arguments: VocabularyViewArguments(key: key, vocab: vocab),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -785,14 +818,17 @@ extension NavigatorStateExtension on _i22.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithVocabularyView([
+  Future<dynamic> replaceWithVocabularyView({
+    _i20.Key? key,
+    required _i22.VocabularyList vocab,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.vocabularyView,
+        arguments: VocabularyViewArguments(key: key, vocab: vocab),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
