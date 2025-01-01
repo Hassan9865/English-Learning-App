@@ -13,6 +13,7 @@ class VocabularyView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
         viewModelBuilder: () => VocabularyViewmodel(),
+        onViewModelReady: (viewModel) => viewModel.initializedTts(),
         builder: (context, VocabularyViewmodel viewModel, child) {
           return Scaffold(
             backgroundColor: Colors.grey[150],
@@ -35,16 +36,66 @@ class VocabularyView extends StatelessWidget {
                 Expanded(
                     child: ListView(
                   children: [
-                    CustumCotaier(title: vocab.vocabulary1),
-                    CustumCotaier(title: vocab.vocabulary2),
-                    CustumCotaier(title: vocab.vocabulary3),
-                    CustumCotaier(title: vocab.vocabulary4),
-                    CustumCotaier(title: vocab.vocabulary5),
-                    CustumCotaier(title: vocab.vocabulary6),
-                    CustumCotaier(title: vocab.vocabulary7),
-                    CustumCotaier(title: vocab.vocabulary8),
-                    CustumCotaier(title: vocab.vocabulary9),
-                    CustumCotaier(title: vocab.vocabulary10),
+                    CustumCotaier(
+                      title: vocab.vocabulary1,
+                      ontap: () {
+                        viewModel.speak(vocab.vocabulary1);
+                      },
+                    ),
+                    CustumCotaier(
+                      title: vocab.vocabulary2,
+                      ontap: () {
+                        viewModel.speak(vocab.vocabulary2);
+                      },
+                    ),
+                    CustumCotaier(
+                      title: vocab.vocabulary3,
+                      ontap: () {
+                        viewModel.speak(vocab.vocabulary3);
+                      },
+                    ),
+                    CustumCotaier(
+                      title: vocab.vocabulary4,
+                      ontap: () {
+                        viewModel.speak(vocab.vocabulary4);
+                      },
+                    ),
+                    CustumCotaier(
+                      title: vocab.vocabulary5,
+                      ontap: () {
+                        viewModel.speak(vocab.vocabulary5);
+                      },
+                    ),
+                    CustumCotaier(
+                      title: vocab.vocabulary6,
+                      ontap: () {
+                        viewModel.speak(vocab.vocabulary6);
+                      },
+                    ),
+                    CustumCotaier(
+                      title: vocab.vocabulary7,
+                      ontap: () {
+                        viewModel.speak(vocab.vocabulary7);
+                      },
+                    ),
+                    CustumCotaier(
+                      title: vocab.vocabulary8,
+                      ontap: () {
+                        viewModel.speak(vocab.vocabulary8);
+                      },
+                    ),
+                    CustumCotaier(
+                      title: vocab.vocabulary9,
+                      ontap: () {
+                        viewModel.speak(vocab.vocabulary9);
+                      },
+                    ),
+                    CustumCotaier(
+                      title: vocab.vocabulary10,
+                      ontap: () {
+                        viewModel.speak(vocab.vocabulary10);
+                      },
+                    ),
                   ],
                 )),
               ],
