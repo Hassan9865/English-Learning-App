@@ -4,14 +4,15 @@ import 'package:learn_eng/components/custum_Textfeild.dart';
 import 'package:learn_eng/view/register%20view/register_viewModel.dart';
 import 'package:stacked/stacked.dart';
 
-class RegisterView extends StatelessWidget {
-  const RegisterView({super.key});
+class EditProfileView extends StatelessWidget {
+  const EditProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
         viewModelBuilder: () => RegisterViewmodel(),
-        builder: (context, viewModel, child) {
+        onViewModelReady: (viewModel) => viewModel.showsaveUserDate(),
+        builder: (context, RegisterViewmodel viewModel, child) {
           return Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: Colors.grey[300],
@@ -35,7 +36,7 @@ class RegisterView extends StatelessWidget {
                           height: 25,
                         ),
                         const Text(
-                          "welcome to the App",
+                          "Edit the Profile",
                           style: TextStyle(fontSize: 22),
                         ),
                         const SizedBox(
@@ -117,7 +118,7 @@ class RegisterView extends StatelessWidget {
                         Mybutton(
                           width: MediaQuery.of(context).size.width / 2,
                           color: Colors.black,
-                          text: "Register",
+                          text: "Edit",
                           ontap: () {
                             // Check if all fields are not empty
                             if (viewModel.nameController.text.isNotEmpty &&
@@ -132,7 +133,7 @@ class RegisterView extends StatelessWidget {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                     content: Center(
-                                        child: Text('Register Succesfully!'))),
+                                        child: Text('Edit Succesfully!'))),
                               );
                             } else {
                               showDialog(

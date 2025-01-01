@@ -13,6 +13,7 @@ import 'package:learn_eng/view/non_use%20file/teachers_view/teachers_view.dart';
 import 'package:learn_eng/view/profile%20view/profile_view.dart';
 import 'package:learn_eng/view/read&liste/read&listen%20view/read&listen_view.dart';
 import 'package:learn_eng/view/read&liste/story/story_view.dart';
+import 'package:learn_eng/view/register%20view/edit_profile/edit_profile_view.dart';
 import 'package:learn_eng/view/register%20view/register_view.dart';
 import 'package:learn_eng/view/vocabulary/vocabulary%20type/vocabType_view.dart';
 import 'package:learn_eng/view/vocabulary/vocabulary_view.dart';
@@ -41,6 +42,7 @@ import 'package:stacked_services/stacked_services.dart';
   MaterialRoute(page: VocabularyView),
   MaterialRoute(page: GrammarView),
   MaterialRoute(page: VocabtypeView),
+  MaterialRoute(page: EditProfileView),
 ], dependencies: [
   Singleton(classType: NavigationService)
 ])

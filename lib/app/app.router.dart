@@ -5,10 +5,10 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i20;
+import 'package:flutter/material.dart' as _i21;
 import 'package:flutter/material.dart';
-import 'package:learn_eng/list/story_list.dart' as _i21;
-import 'package:learn_eng/list/vocabulary_list.dart' as _i22;
+import 'package:learn_eng/list/story_list.dart' as _i22;
+import 'package:learn_eng/list/vocabulary_list.dart' as _i23;
 import 'package:learn_eng/view/grammar/grammar_view.dart' as _i18;
 import 'package:learn_eng/view/home/home_view.dart' as _i5;
 import 'package:learn_eng/view/non_use%20file/bottom_NavBar/bottom_NavBar_view.dart'
@@ -28,13 +28,15 @@ import 'package:learn_eng/view/Quiz/tense_quiz/tenseQuiz_view.dart' as _i13;
 import 'package:learn_eng/view/read&liste/read&listen%20view/read&listen_view.dart'
     as _i15;
 import 'package:learn_eng/view/read&liste/story/story_view.dart' as _i16;
+import 'package:learn_eng/view/register%20view/edit_profile/edit_profile_view.dart'
+    as _i20;
 import 'package:learn_eng/view/register%20view/register_view.dart' as _i4;
 import 'package:learn_eng/view/Splash%20view/splash_view.dart' as _i2;
 import 'package:learn_eng/view/vocabulary/vocabulary%20type/vocabType_view.dart'
     as _i19;
 import 'package:learn_eng/view/vocabulary/vocabulary_view.dart' as _i17;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i23;
+import 'package:stacked_services/stacked_services.dart' as _i24;
 
 class Routes {
   static const splashView = '/';
@@ -73,6 +75,8 @@ class Routes {
 
   static const vocabtypeView = '/vocabtype-view';
 
+  static const editProfileView = '/edit-profile-view';
+
   static const all = <String>{
     splashView,
     loginView,
@@ -92,6 +96,7 @@ class Routes {
     vocabularyView,
     grammarView,
     vocabtypeView,
+    editProfileView,
   };
 }
 
@@ -169,117 +174,127 @@ class StackedRouter extends _i1.RouterBase {
       Routes.vocabtypeView,
       page: _i19.VocabtypeView,
     ),
+    _i1.RouteDef(
+      Routes.editProfileView,
+      page: _i20.EditProfileView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.SplashView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.SplashView(),
         settings: data,
       );
     },
     _i3.LoginView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.LoginView(),
         settings: data,
       );
     },
     _i4.RegisterView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.RegisterView(),
         settings: data,
       );
     },
     _i5.HomeView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.HomeView(),
         settings: data,
       );
     },
     _i6.ProfileView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.ProfileView(),
         settings: data,
       );
     },
     _i7.ChatsView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.ChatsView(),
         settings: data,
       );
     },
     _i8.TeachersView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.TeachersView(),
         settings: data,
       );
     },
     _i9.BottomNavbarView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => _i9.BottomNavbarView(),
         settings: data,
       );
     },
     _i10.BasicQuizView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.BasicQuizView(),
         settings: data,
       );
     },
     _i11.ChattingView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i11.ChattingView(),
         settings: data,
       );
     },
     _i12.ModalquizView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.ModalquizView(),
         settings: data,
       );
     },
     _i13.TensequizView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.TensequizView(),
         settings: data,
       );
     },
     _i14.QuizesView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.QuizesView(),
         settings: data,
       );
     },
     _i15.ReadlistenView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i15.ReadlistenView(),
         settings: data,
       );
     },
     _i16.StoryView: (data) {
       final args = data.getArgs<StoryViewArguments>(nullOk: false);
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => _i16.StoryView(key: args.key, story: args.story),
         settings: data,
       );
     },
     _i17.VocabularyView: (data) {
       final args = data.getArgs<VocabularyViewArguments>(nullOk: false);
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i17.VocabularyView(key: args.key, vocab: args.vocab),
         settings: data,
       );
     },
     _i18.GrammarView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i18.GrammarView(),
         settings: data,
       );
     },
     _i19.VocabtypeView: (data) {
-      return _i20.MaterialPageRoute<dynamic>(
+      return _i21.MaterialPageRoute<dynamic>(
         builder: (context) => const _i19.VocabtypeView(),
+        settings: data,
+      );
+    },
+    _i20.EditProfileView: (data) {
+      return _i21.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i20.EditProfileView(),
         settings: data,
       );
     },
@@ -298,9 +313,9 @@ class StoryViewArguments {
     required this.story,
   });
 
-  final _i20.Key? key;
+  final _i21.Key? key;
 
-  final _i21.StoryList story;
+  final _i22.StoryList story;
 
   @override
   String toString() {
@@ -325,9 +340,9 @@ class VocabularyViewArguments {
     required this.vocab,
   });
 
-  final _i20.Key? key;
+  final _i21.Key? key;
 
-  final _i22.VocabularyList vocab;
+  final _i23.VocabularyList vocab;
 
   @override
   String toString() {
@@ -346,7 +361,7 @@ class VocabularyViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i23.NavigationService {
+extension NavigatorStateExtension on _i24.NavigationService {
   Future<dynamic> navigateToSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -544,8 +559,8 @@ extension NavigatorStateExtension on _i23.NavigationService {
   }
 
   Future<dynamic> navigateToStoryView({
-    _i20.Key? key,
-    required _i21.StoryList story,
+    _i21.Key? key,
+    required _i22.StoryList story,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -561,8 +576,8 @@ extension NavigatorStateExtension on _i23.NavigationService {
   }
 
   Future<dynamic> navigateToVocabularyView({
-    _i20.Key? key,
-    required _i22.VocabularyList vocab,
+    _i21.Key? key,
+    required _i23.VocabularyList vocab,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -599,6 +614,20 @@ extension NavigatorStateExtension on _i23.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.vocabtypeView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToEditProfileView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.editProfileView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -802,8 +831,8 @@ extension NavigatorStateExtension on _i23.NavigationService {
   }
 
   Future<dynamic> replaceWithStoryView({
-    _i20.Key? key,
-    required _i21.StoryList story,
+    _i21.Key? key,
+    required _i22.StoryList story,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -819,8 +848,8 @@ extension NavigatorStateExtension on _i23.NavigationService {
   }
 
   Future<dynamic> replaceWithVocabularyView({
-    _i20.Key? key,
-    required _i22.VocabularyList vocab,
+    _i21.Key? key,
+    required _i23.VocabularyList vocab,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -857,6 +886,20 @@ extension NavigatorStateExtension on _i23.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.vocabtypeView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithEditProfileView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.editProfileView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

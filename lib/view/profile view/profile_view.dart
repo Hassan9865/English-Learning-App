@@ -23,6 +23,82 @@ class ProfileView extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
+              leading: IconButton(
+                  onPressed: () {
+                    viewModel.navigateToHome();
+                  },
+                  icon: Icon(Icons.arrow_back_outlined)),
+              actions: [
+                IconButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(20), // Rounded corners
+                          ),
+                          title: Row(
+                            children: [
+                              Icon(Icons.edit_outlined),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Edit",
+                                style: TextStyle(
+                                    fontSize: 24,
+                                    color: Colors.grey[800],
+                                    fontWeight: FontWeight.bold),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                          content: Text(
+                            "Do you want to Edit the Profile",
+                            style: TextStyle(
+                                fontSize: 16, color: Colors.grey[800]),
+                            textAlign: TextAlign.center,
+                          ),
+                          actionsAlignment: MainAxisAlignment.center,
+                          actions: [
+                            TextButton(
+                              style: TextButton.styleFrom(
+                                backgroundColor: Colors.grey[200],
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                              ),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text(
+                                'Cancel',
+                                style: TextStyle(color: Colors.redAccent),
+                              ),
+                            ),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.greenAccent,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                              ),
+                              onPressed: () {
+                                viewModel.navigateToEditview();
+                              },
+                              child: Text('Edit'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  icon: Icon(Icons.edit_outlined),
+                  color: Colors.white,
+                ),
+              ],
               backgroundColor: Colors.deepPurple,
               elevation: 4,
             ),
